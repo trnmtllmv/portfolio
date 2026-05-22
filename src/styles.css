@@ -177,12 +177,12 @@ main {
   z-index: 1;
   display: grid;
   grid-template-columns: minmax(0, 1.02fr) minmax(360px, 0.98fr);
-  gap: 54px;
+  gap: 48px;
   align-items: center;
   width: min(1180px, calc(100% - 44px));
   min-height: calc(100vh - 72px);
   margin: 0 auto;
-  padding: 76px 0 54px;
+  padding: 54px 0 40px;
 }
 
 .hero-copy,
@@ -215,7 +215,7 @@ h3 {
 
 h1 {
   max-width: 760px;
-  font-size: 5.1rem;
+  font-size: 4.65rem;
   font-weight: 930;
 }
 
@@ -318,7 +318,7 @@ h3 {
 
 .hero-stage {
   position: relative;
-  min-height: 650px;
+  min-height: 570px;
 }
 
 .portrait-frame,
@@ -332,10 +332,10 @@ h3 {
 }
 
 .portrait-frame {
-  top: 24px;
-  right: 30px;
+  top: 4px;
+  right: 24px;
   z-index: 3;
-  width: 330px;
+  width: 300px;
   overflow: hidden;
   animation: liftFrame 7s ease-in-out infinite;
 }
@@ -363,9 +363,9 @@ h3 {
 
 .hero-visual-card {
   left: 0;
-  bottom: 86px;
+  bottom: 72px;
   z-index: 2;
-  width: 390px;
+  width: 350px;
   overflow: hidden;
   transform: rotate(-4deg);
   animation: cardDrift 8s ease-in-out infinite;
@@ -384,7 +384,7 @@ h3 {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 8px;
-  width: 360px;
+  width: 345px;
   padding: 16px;
 }
 
