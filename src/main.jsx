@@ -1,49 +1,70 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { createRoot } from "react-dom/client";
 import {
   ArrowUpRight,
   Award,
   BookOpen,
   BriefcaseBusiness,
-  CheckCircle2,
+  ChevronLeft,
+  ChevronRight,
+  Cpu,
+  Database,
   ExternalLink,
+  Filter,
   FlaskConical,
+  Github,
   GraduationCap,
+  HeartHandshake,
   Linkedin,
   Mail,
   MapPin,
+  Microscope,
   Presentation,
+  Rocket,
   ShieldCheck,
   Sparkles,
   Wrench,
 } from "lucide-react";
 import {
   about,
-  certifications,
-  conferences,
-  figureStrip,
+  accounts,
+  affiliations,
+  digitalTwin,
+  education,
+  experience,
+  gallery,
+  heroNodes,
   navItems,
   profile,
-  projects,
   proofPoints,
   publications,
   recognition,
-  research,
-  timeline,
+  researchMetrics,
+  researchPillars,
+  ventures,
+  worlds,
 } from "./content";
 import "./styles.css";
 
 const iconMap = {
   Award,
+  BookOpen,
   BriefcaseBusiness,
+  Cpu,
+  Database,
   FlaskConical,
+  Github,
+  GraduationCap,
+  HeartHandshake,
+  Linkedin,
+  Mail,
+  Microscope,
   Presentation,
+  Rocket,
   ShieldCheck,
   Sparkles,
   Wrench,
 };
-
-const focusIcons = [BriefcaseBusiness, FlaskConical, Wrench, Presentation];
 
 function useScrollReveal() {
   useEffect(() => {
@@ -63,11 +84,10 @@ function useScrollReveal() {
           }
         });
       },
-      { rootMargin: "0px 0px -70px 0px", threshold: 0.12 },
+      { rootMargin: "0px 0px -80px 0px", threshold: 0.14 },
     );
 
     elements.forEach((element) => observer.observe(element));
-
     return () => observer.disconnect();
   }, []);
 }
@@ -78,6 +98,21 @@ function externalLinkProps(href) {
   }
 
   return { target: "_blank", rel: "noreferrer" };
+}
+
+function IconByName({ name, size = 18 }) {
+  const Icon = iconMap[name] ?? ArrowUpRight;
+  return <Icon size={size} aria-hidden="true" />;
+}
+
+function SectionHeading({ eyebrow, title, body, align = "left" }) {
+  return (
+    <div className={`section-heading ${align === "center" ? "center" : ""}`} data-reveal>
+      {eyebrow ? <p className="eyebrow">{eyebrow}</p> : null}
+      <h2>{title}</h2>
+      {body ? <p>{body}</p> : null}
+    </div>
+  );
 }
 
 function Header() {
@@ -93,14 +128,19 @@ function Header() {
           </a>
         ))}
       </nav>
-      <a
-        className="icon-link"
-        href={profile.linkedin}
-        aria-label="LinkedIn profile"
-        {...externalLinkProps(profile.linkedin)}
-      >
-        <Linkedin size={19} />
-      </a>
+      <div className="header-actions">
+        <a
+          className="icon-link"
+          href={accounts[0].href}
+          aria-label="LinkedIn profile"
+          {...externalLinkProps(accounts[0].href)}
+        >
+          <Linkedin size={18} />
+        </a>
+        <a className="icon-link" href={`mailto:${profile.email}`} aria-label="Email Turan">
+          <Mail size={18} />
+        </a>
+      </div>
     </header>
   );
 }
@@ -108,82 +148,75 @@ function Header() {
 function Hero() {
   return (
     <section className="hero" id="top">
-      <div
-        className="hero-backdrop"
-        aria-hidden="true"
-        style={{ "--hero-image": `url("${profile.heroImage}")` }}
-      />
-      <div className="hero-content">
+      <div className="hero-grid">
         <div className="hero-copy" data-reveal>
           <p className="eyebrow">{profile.role}</p>
           <h1>{profile.name}</h1>
-          <p className="hero-thesis">{profile.thesis}</p>
-          <p className="lead">{profile.summary}</p>
+          <p className="hero-headline">{profile.headline}</p>
+          <p className="hero-summary">{profile.summary}</p>
+          <div className="account-row" aria-label="Public profiles">
+            {accounts.map((account) => (
+              <a
+                className="account-link"
+                key={account.label}
+                href={account.href}
+                aria-label={account.note}
+                {...externalLinkProps(account.href)}
+              >
+                <IconByName name={account.icon} size={17} />
+                <span>{account.label}</span>
+              </a>
+            ))}
+          </div>
           <div className="hero-actions">
-            <a className="primary-button" href="#research">
-              <FlaskConical size={18} />
-              Research Focus
+            <a className="primary-button" href="#worlds">
+              <Sparkles size={18} />
+              Enter My World
             </a>
-            <a className="secondary-button" href={`mailto:${profile.email}`}>
-              <Mail size={18} />
-              Contact
+            <a className="secondary-button" href="#publications">
+              <BookOpen size={18} />
+              Publications
             </a>
           </div>
         </div>
-        <aside className="portrait-panel" aria-label="Professional profile" data-reveal>
-          <img src={profile.portrait} alt={profile.name} />
-          <div className="portrait-copy">
-            <strong>{profile.location}</strong>
-            <span>{profile.affiliation}</span>
+
+        <div className="hero-stage" data-reveal>
+          <div className="portrait-frame">
+            <img src={profile.portrait} alt={profile.name} />
+            <div className="portrait-caption">
+              <strong>{profile.shortRole}</strong>
+              <span>
+                <MapPin size={14} />
+                {profile.location}
+              </span>
+            </div>
           </div>
-          <div className="portrait-links">
-            <a href={profile.linkedin} {...externalLinkProps(profile.linkedin)}>
-              <Linkedin size={16} />
-              LinkedIn
-            </a>
-            <a href={`mailto:${profile.email}`}>
-              <Mail size={16} />
-              Email
-            </a>
+          <div className="hero-visual-card">
+            <img src={profile.heroVisual} alt="Research and digital systems visual" />
           </div>
-        </aside>
+          <div className="world-map" aria-label="Turan's professional worlds">
+            {heroNodes.map((node, index) => (
+              <span key={node} style={{ "--index": index }}>
+                {node}
+              </span>
+            ))}
+          </div>
+        </div>
       </div>
+      <AffiliationStrip />
     </section>
   );
 }
 
-function Recognition() {
+function AffiliationStrip() {
   return (
-    <section className="recognition-section" id="recognition" aria-label="Selected recognition">
-      <div className="recognition-inner">
-        {recognition.map((item) => {
-          const Icon = iconMap[item.icon] ?? Award;
-          const content = (
-            <>
-              <Icon size={22} />
-              <div>
-                <span>{item.detail}</span>
-                <strong>{item.title}</strong>
-              </div>
-              {item.href ? <ExternalLink size={16} className="external-indicator" /> : null}
-            </>
-          );
-
-          if (item.href) {
-            return (
-              <a className="recognition-item" key={item.title} href={item.href} data-reveal {...externalLinkProps(item.href)}>
-                {content}
-              </a>
-            );
-          }
-
-          return (
-            <article className="recognition-item" key={item.title} data-reveal>
-              {content}
-            </article>
-          );
-        })}
-      </div>
+    <section className="affiliation-strip" aria-label="Affiliations and ventures">
+      {affiliations.map((item) => (
+        <article className="affiliation-item" key={item.name} data-reveal>
+          {item.image ? <img src={item.image} alt={item.name} /> : <strong>{item.mark}</strong>}
+          <span>{item.note}</span>
+        </article>
+      ))}
     </section>
   );
 }
@@ -191,10 +224,7 @@ function Recognition() {
 function About() {
   return (
     <section className="section about-section" id="about">
-      <div className="section-heading" data-reveal>
-        <p className="eyebrow">{about.eyebrow}</p>
-        <h2>{about.title}</h2>
-      </div>
+      <SectionHeading eyebrow={about.eyebrow} title={about.title} />
       <div className="about-layout">
         <div className="about-copy" data-reveal>
           {about.body.map((paragraph) => (
@@ -211,15 +241,88 @@ function About() {
         </div>
       </div>
       <div className="focus-grid">
-        {about.focus.map((item, index) => {
-          const Icon = focusIcons[index] ?? CheckCircle2;
-          return (
-            <article className="focus-card" key={item} data-reveal>
-              <Icon size={23} />
-              <span>{item}</span>
-            </article>
-          );
-        })}
+        {about.focus.map((item, index) => (
+          <article className="focus-card" key={item} data-reveal style={{ "--delay": index }}>
+            <ShieldCheck size={22} />
+            <span>{item}</span>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function WorldsCarousel() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const active = worlds[activeIndex];
+
+  useEffect(() => {
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReducedMotion) {
+      return undefined;
+    }
+
+    const timer = window.setInterval(() => {
+      setActiveIndex((current) => (current + 1) % worlds.length);
+    }, 8000);
+
+    return () => window.clearInterval(timer);
+  }, []);
+
+  const go = (direction) => {
+    setActiveIndex((current) => (current + direction + worlds.length) % worlds.length);
+  };
+
+  return (
+    <section className="section worlds-section" id="worlds">
+      <span className="anchor-alias" id="projects" aria-hidden="true" />
+      <SectionHeading
+        eyebrow="Selected Worlds"
+        title="Five spaces that explain the whole person, not just one project."
+        body="The page is designed as a guided room: research evidence, offshore decision systems, ventures, public service, and professional delivery all sit in one clean narrative."
+      />
+      <div className="worlds-carousel" data-reveal>
+        <div className="world-media">
+          <img src={active.image} alt={active.title} />
+        </div>
+        <div className="world-copy">
+          <p className="eyebrow">{active.kicker}</p>
+          <h3>{active.title}</h3>
+          <p>{active.body}</p>
+          <ul className="world-facts">
+            {active.facts.map((fact) => (
+              <li key={fact}>
+                <Sparkles size={16} />
+                {fact}
+              </li>
+            ))}
+          </ul>
+          <div className="carousel-controls" aria-label="Selected worlds carousel controls">
+            <button type="button" className="icon-button" onClick={() => go(-1)} aria-label="Previous world">
+              <ChevronLeft size={20} />
+            </button>
+            <span>
+              {String(activeIndex + 1).padStart(2, "0")} / {String(worlds.length).padStart(2, "0")}
+            </span>
+            <button type="button" className="icon-button" onClick={() => go(1)} aria-label="Next world">
+              <ChevronRight size={20} />
+            </button>
+          </div>
+        </div>
+      </div>
+      <div className="world-tabs" role="tablist" aria-label="World selector">
+        {worlds.map((world, index) => (
+          <button
+            type="button"
+            key={world.id}
+            className={index === activeIndex ? "is-active" : ""}
+            onClick={() => setActiveIndex(index)}
+            role="tab"
+            aria-selected={index === activeIndex}
+          >
+            {world.label}
+          </button>
+        ))}
       </div>
     </section>
   );
@@ -227,93 +330,91 @@ function About() {
 
 function Research() {
   return (
-    <section className="section research-band" id="research">
-      <div className="research-copy" data-reveal>
-        <p className="eyebrow">{research.eyebrow}</p>
-        <h2>{research.title}</h2>
-        <p>{research.body}</p>
-        <div className="research-list">
-          {research.bullets.map((item) => (
-            <span key={item}>
-              <CheckCircle2 size={18} />
-              {item}
-            </span>
-          ))}
-        </div>
+    <section className="section research-section" id="research">
+      <SectionHeading
+        eyebrow="Research"
+        title="Bioremediation work made measurable, visual, and useful."
+        body={profile.thesis}
+      />
+      <div className="research-grid">
+        {researchPillars.map((pillar, index) => (
+          <article className="research-card" key={pillar.title} data-reveal style={{ "--delay": index }}>
+            <IconByName name={pillar.icon} size={24} />
+            <h3>{pillar.title}</h3>
+            <p>{pillar.body}</p>
+          </article>
+        ))}
       </div>
-      <div className="research-visual" data-reveal>
-        <img src={research.image} alt="Microbial bioremediation concept with oil droplets in a lab setting" />
-      </div>
-    </section>
-  );
-}
-
-function Projects() {
-  return (
-    <section className="section projects-section" id="projects">
-      <div className="section-heading narrow" data-reveal>
-        <p className="eyebrow">Selected Work</p>
-        <h2>Research translated into tools, evidence, and communication.</h2>
-      </div>
-      <div className="project-grid">
-        {projects.map((project) => {
-          const body = (
-            <>
-              <img src={project.image} alt={project.imageAlt} />
-              <div className="project-body">
-                <span>{project.tag}</span>
-                <h3>{project.title}</h3>
-                <p>{project.body}</p>
-                {project.href ? (
-                  <span className="text-link">
-                    Open public page
-                    <ArrowUpRight size={15} />
-                  </span>
-                ) : null}
-              </div>
-            </>
-          );
-
-          if (project.href) {
-            return (
-              <a className="project-card" key={project.title} href={project.href} data-reveal {...externalLinkProps(project.href)}>
-                {body}
-              </a>
-            );
-          }
-
-          return (
-            <article className="project-card" key={project.title} data-reveal>
-              {body}
-            </article>
-          );
-        })}
-      </div>
-      <div className="figure-strip" data-reveal>
-        {figureStrip.map((figure) => (
-          <img src={figure.src} alt={figure.alt} key={figure.src} />
+      <div className="metric-rail" data-reveal>
+        {researchMetrics.map((metric) => (
+          <article key={metric.label}>
+            <strong>{metric.value}</strong>
+            <span>{metric.label}</span>
+          </article>
         ))}
       </div>
     </section>
   );
 }
 
-function Experience() {
+function DigitalTwin() {
   return (
-    <section className="section experience-band" id="experience">
-      <div className="section-heading" data-reveal>
-        <p className="eyebrow">Experience and Education</p>
-        <h2>Across energy projects, teaching, and doctoral research.</h2>
+    <section className="digital-twin-section" id="digital-twins">
+      <div className="digital-copy" data-reveal>
+        <p className="eyebrow">{digitalTwin.eyebrow}</p>
+        <h2>{digitalTwin.title}</h2>
+        <p>{digitalTwin.body}</p>
       </div>
-      <div className="timeline">
-        {timeline.map((item) => (
-          <article className="timeline-item" key={`${item.period}-${item.role}`} data-reveal>
-            <div className="timeline-marker" aria-hidden="true" />
-            <div>
-              <span>{item.period}</span>
-              <h3>{item.role}</h3>
-              <strong>{item.place}</strong>
-              <p>{item.details}</p>
+      <div className="digital-layout">
+        <div className="digital-visual" data-reveal>
+          <img src={digitalTwin.image} alt="Digital twin dashboard and offshore decision visual" />
+        </div>
+        <div className="digital-list">
+          {digitalTwin.items.map((item) => (
+            <article className="digital-item" key={item.title} data-reveal>
+              <h3>{item.title}</h3>
+              <p>{item.body}</p>
+              {item.href ? (
+                <a href={item.href} {...externalLinkProps(item.href)}>
+                  Open public record
+                  <ExternalLink size={15} />
+                </a>
+              ) : null}
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Ventures() {
+  return (
+    <section className="section ventures-section" id="ventures">
+      <SectionHeading
+        eyebrow="Ventures"
+        title="Startup and social-impact work with a safety-and-service centre of gravity."
+        body="Helptix is now updated from the attached deck as a medical-service access platform for emergency location, ambulance support, first-aid guidance, and care coordination."
+      />
+      <div className="venture-grid">
+        {ventures.map((venture, index) => (
+          <article className="venture-card" key={venture.name} data-reveal style={{ "--delay": index }}>
+            <div className="venture-image">
+              <img src={venture.image} alt={`${venture.name} visual`} />
+              {venture.logo ? <img className="venture-logo" src={venture.logo} alt={`${venture.name} logo`} /> : null}
+            </div>
+            <div className="venture-copy">
+              <span>
+                <IconByName name={venture.icon} size={17} />
+                {venture.label}
+              </span>
+              <h3>{venture.name}</h3>
+              <p>{venture.body}</p>
+              <ul>
+                {venture.details.map((detail) => (
+                  <li key={detail}>{detail}</li>
+                ))}
+              </ul>
             </div>
           </article>
         ))}
@@ -323,67 +424,138 @@ function Experience() {
 }
 
 function Publications() {
+  const categories = useMemo(
+    () => ["All", ...Array.from(new Set(publications.map((publication) => publication.category)))],
+    [],
+  );
+  const [activeCategory, setActiveCategory] = useState("All");
+  const visiblePublications = publications.filter(
+    (publication) => activeCategory === "All" || publication.category === activeCategory,
+  );
+
   return (
-    <section className="section publication-section" id="publications">
-      <div className="section-heading" data-reveal>
-        <p className="eyebrow">Publications, Talks, Certifications</p>
-        <h2>Signals of research depth and professional delivery discipline.</h2>
+    <section className="section publications-section" id="publications">
+      <SectionHeading
+        eyebrow="Publications"
+        title="Public outputs across digital twins, bioremediation, AI, and safety."
+        body="This section uses public records and DOI/portal links where exact records are available. Google Scholar is linked as a search because an exact profile was not safely verified."
+      />
+      <div className="publication-filters" aria-label="Publication filters" data-reveal>
+        <Filter size={18} />
+        {categories.map((category) => (
+          <button
+            type="button"
+            key={category}
+            className={category === activeCategory ? "is-active" : ""}
+            onClick={() => setActiveCategory(category)}
+          >
+            {category}
+          </button>
+        ))}
       </div>
-      <div className="pub-layout">
-        <div className="publication-list">
-          {publications.map((pub) => {
-            const content = (
-              <>
-                <BookOpen size={22} />
-                <div>
-                  <span>{pub.type}</span>
-                  <h3>{pub.title}</h3>
-                  <p>{pub.detail}</p>
-                  {pub.href ? (
-                    <span className="text-link">
-                      Open public page
-                      <ArrowUpRight size={15} />
-                    </span>
-                  ) : null}
-                </div>
-              </>
-            );
-
-            if (pub.href) {
-              return (
-                <a className="publication-card" key={pub.title} href={pub.href} data-reveal {...externalLinkProps(pub.href)}>
-                  {content}
+      <div className="publication-list">
+        {visiblePublications.map((publication) => (
+          <article className="publication-card" key={publication.title} data-reveal>
+            <div>
+              <span>{publication.category}</span>
+              <h3>{publication.title}</h3>
+              <p>{publication.venue}</p>
+            </div>
+            <p>{publication.detail}</p>
+            <div className="publication-links">
+              {publication.href ? (
+                <a href={publication.href} {...externalLinkProps(publication.href)}>
+                  Public link
+                  <ExternalLink size={15} />
                 </a>
-              );
-            }
+              ) : null}
+              {publication.secondaryHref ? (
+                <a href={publication.secondaryHref} {...externalLinkProps(publication.secondaryHref)}>
+                  Research portal
+                  <ExternalLink size={15} />
+                </a>
+              ) : null}
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
 
-            return (
-              <article className="publication-card" key={pub.title} data-reveal>
-                {content}
-              </article>
-            );
-          })}
+function Recognition() {
+  return (
+    <section className="recognition-section" id="recognition">
+      <SectionHeading
+        eyebrow="Recognition"
+        title="Awards, certifications, and public research moments."
+        align="center"
+      />
+      <div className="recognition-grid">
+        {recognition.map((item, index) => (
+          <article className="recognition-item" key={`${item.title}-${item.detail}`} data-reveal style={{ "--delay": index }}>
+            <IconByName name={item.icon} size={24} />
+            <span>{item.detail}</span>
+            <strong>{item.title}</strong>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function Experience() {
+  return (
+    <section className="section experience-section" id="experience">
+      <SectionHeading
+        eyebrow="Experience"
+        title="A timeline that moves between research, teaching, and project delivery."
+      />
+      <div className="experience-layout">
+        <div className="timeline">
+          {experience.map((item) => (
+            <article className="timeline-item" key={`${item.period}-${item.role}`} data-reveal>
+              <span>{item.period}</span>
+              <h3>{item.role}</h3>
+              <strong>{item.place}</strong>
+              <p>{item.details}</p>
+            </article>
+          ))}
         </div>
-        <aside className="credential-panel" data-reveal>
-          <div>
-            <Presentation size={23} />
-            <h3>Conference Presence</h3>
-            <ul>
-              {conferences.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <Award size={23} />
-            <h3>Certifications</h3>
-            <ul>
-              {certifications.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </div>
-        </aside>
+        <div className="education-panel" data-reveal>
+          <h3>Education</h3>
+          {education.map((item) => (
+            <article key={item.degree}>
+              <span>{item.period}</span>
+              <strong>{item.degree}</strong>
+              <p>{item.place}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Gallery() {
+  return (
+    <section className="gallery-section" id="gallery">
+      <SectionHeading
+        eyebrow="Gallery"
+        title="A figure carousel: selected visuals, not a document dump."
+        body="Curated public-facing visuals from research, digital twins, Helptix, Icarus, and modelling work."
+        align="center"
+      />
+      <div className="gallery-rail" aria-label="Selected visual carousel">
+        {gallery.map((item) => (
+          <article className="gallery-card" key={item.title} data-reveal>
+            <img src={item.image} alt={item.title} />
+            <div>
+              <span>{item.tag}</span>
+              <strong>{item.title}</strong>
+            </div>
+          </article>
+        ))}
       </div>
     </section>
   );
@@ -391,34 +563,29 @@ function Publications() {
 
 function Contact() {
   return (
-    <section className="section contact-section" id="contact">
-      <div data-reveal>
+    <section className="contact-section" id="contact">
+      <div className="contact-copy" data-reveal>
         <p className="eyebrow">Contact</p>
-        <h2>For project engineering, research collaboration, and energy-sector opportunities.</h2>
+        <h2>For research, project, speaking, and collaboration conversations.</h2>
+        <p>
+          Professional contact is kept simple and public-facing: email, LinkedIn, ORCID, GitHub, and
+          Aberdeen location.
+        </p>
       </div>
-      <div className="contact-actions" data-reveal>
-        <a className="primary-button" href={`mailto:${profile.email}`}>
-          <Mail size={18} />
-          Email
-        </a>
-        <a className="secondary-button" href={profile.linkedin} {...externalLinkProps(profile.linkedin)}>
-          <Linkedin size={18} />
-          LinkedIn
-        </a>
-      </div>
-      <div className="contact-meta" data-reveal>
-        <span>
-          <MapPin size={18} />
-          {profile.location}
-        </span>
-        <span>
-          <GraduationCap size={18} />
-          {profile.affiliation}
-        </span>
-        <span>
-          <ShieldCheck size={18} />
-          PMP-certified project professional
-        </span>
+      <div className="contact-grid" data-reveal>
+        {accounts.map((account) => (
+          <a
+            className="contact-card"
+            key={account.label}
+            href={account.href}
+            {...externalLinkProps(account.href)}
+          >
+            <IconByName name={account.icon} size={22} />
+            <span>{account.note}</span>
+            <strong>{account.label}</strong>
+            <ArrowUpRight size={17} />
+          </a>
+        ))}
       </div>
     </section>
   );
@@ -432,23 +599,27 @@ function App() {
       <Header />
       <main>
         <Hero />
-        <Recognition />
         <About />
+        <WorldsCarousel />
         <Research />
-        <Projects />
-        <Experience />
+        <DigitalTwin />
+        <Ventures />
         <Publications />
+        <Recognition />
+        <Experience />
+        <Gallery />
         <Contact />
       </main>
       <footer className="site-footer">
         <span>{profile.name}</span>
-        <a href="#top">
-          Back to top
-          <ArrowUpRight size={16} />
-        </a>
+        <span>{profile.location}</span>
       </footer>
     </>
   );
 }
 
-createRoot(document.getElementById("root")).render(<App />);
+createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+);

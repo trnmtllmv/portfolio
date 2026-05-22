@@ -4,7 +4,7 @@ Professional personal homepage for Turan Mutallimov, built with React and Vite a
 
 Public URL: <https://trnmtllmv.github.io/portfolio/>
 
-The site is designed as a public LinkedIn companion: project delivery, petroleum engineering research, microbial bioremediation, selected publications, awards, and contact details. It intentionally excludes private PDFs, phone numbers, ID, visa, driving licence, and administrative documents.
+The site is designed as a public LinkedIn companion: project delivery, petroleum engineering research, microbial bioremediation, digital twins, ventures, selected publications, awards, and professional contact details. Source decks and private records are not published.
 
 ## Development
 
