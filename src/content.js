@@ -21,6 +21,7 @@ export const profile = {
   affiliation: "University of Aberdeen",
   email: "turan.mutallimov@yahoo.com",
   portrait: asset("profile-clean.jpg"),
+  background: asset("offshore-platform-hero.jpg"),
   heroVisual: asset("world-hero.png"),
   headline:
     "I build evidence-driven systems for energy, environment, safety, and human impact.",

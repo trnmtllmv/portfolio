@@ -147,7 +147,7 @@ function Header() {
 
 function Hero() {
   return (
-    <section className="hero" id="top">
+    <section className="hero" id="top" style={{ "--hero-bg": `url("${profile.background}")` }}>
       <div className="hero-grid">
         <div className="hero-copy" data-reveal>
           <p className="eyebrow">{profile.role}</p>

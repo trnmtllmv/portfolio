@@ -20,3 +20,7 @@ npm run build
 ```
 
 The Vite base path is configured for GitHub Pages project deployment at `/portfolio/`.
+
+## Visual Credits
+
+Hero offshore platform photo by Rob Barber on Unsplash, used under the Unsplash License.
