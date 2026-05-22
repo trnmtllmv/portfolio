@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { createRoot } from "react-dom/client";
 import {
   ArrowUpRight,
@@ -6,6 +6,7 @@ import {
   BookOpen,
   BriefcaseBusiness,
   CheckCircle2,
+  ExternalLink,
   FlaskConical,
   GraduationCap,
   Linkedin,
@@ -16,129 +17,68 @@ import {
   Sparkles,
   Wrench,
 } from "lucide-react";
+import {
+  about,
+  certifications,
+  conferences,
+  figureStrip,
+  navItems,
+  profile,
+  projects,
+  proofPoints,
+  publications,
+  recognition,
+  research,
+  timeline,
+} from "./content";
 import "./styles.css";
 
-const navItems = [
-  ["About", "#about"],
-  ["Research", "#research"],
-  ["Projects", "#projects"],
-  ["Experience", "#experience"],
-  ["Publications", "#publications"],
-  ["Contact", "#contact"],
-];
+const iconMap = {
+  Award,
+  BriefcaseBusiness,
+  FlaskConical,
+  Presentation,
+  ShieldCheck,
+  Sparkles,
+  Wrench,
+};
 
-const asset = (name) => `${import.meta.env.BASE_URL}assets/${name}`;
+const focusIcons = [BriefcaseBusiness, FlaskConical, Wrench, Presentation];
 
-const stats = [
-  { value: "PMP", label: "Certified project delivery" },
-  { value: "PhD", label: "Petroleum engineering candidate" },
-  { value: "5+", label: "Conference and symposium outputs" },
-  { value: "3", label: "Languages: Azerbaijani, English, Turkish" },
-];
+function useScrollReveal() {
+  useEffect(() => {
+    const elements = document.querySelectorAll("[data-reveal]");
 
-const snapshots = [
-  {
-    icon: BriefcaseBusiness,
-    title: "Energy project delivery",
-    body: "Project planning, vendor coordination, milestone tracking, and stakeholder reporting across energy-sector engineering work.",
-  },
-  {
-    icon: FlaskConical,
-    title: "Bioremediation research",
-    body: "Doctoral work on microbial crude-oil biodegradation, biodiversity, environmental factors, and predictive modelling in coastal soils.",
-  },
-  {
-    icon: Wrench,
-    title: "Technical modelling toolkit",
-    body: "MATLAB, Python, R, COMSOL, LaTeX, statistical modelling, data visualization, machine learning, and research documentation.",
-  },
-];
+    if (!("IntersectionObserver" in window)) {
+      elements.forEach((element) => element.classList.add("is-visible"));
+      return undefined;
+    }
 
-const projects = [
-  {
-    title: "Microfluidic Biodegradation Simulator",
-    tag: "Predictive research tool",
-    image: asset("microfluidic-simulator.png"),
-    body: "A pore-scale simulator concept for exploring brine, oil, biomass, emulsion, and air behaviour during microbial degradation scenarios.",
-  },
-  {
-    title: "Coastal Bioremediation Modelling",
-    tag: "PhD research stream",
-    image: asset("microfluidic-heatmap.png"),
-    body: "Environmental-factor integration for modelling crude-oil degradation under changing pH, moisture, oxygen, heavy-metal, and microbial conditions.",
-  },
-  {
-    title: "Experimental Workflow and Assay Design",
-    tag: "Laboratory research",
-    image: asset("sara-fractionation-workflow.jpg"),
-    body: "Research workflow spanning microbial screening, oil fractionation, chemical analysis, and model-ready experimental documentation.",
-  },
-];
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { rootMargin: "0px 0px -70px 0px", threshold: 0.12 },
+    );
 
-const timeline = [
-  {
-    period: "2022 - Present",
-    role: "PhD Candidate, Petroleum Engineering",
-    place: "University of Aberdeen",
-    details:
-      "Researching microbial biodegradation and biodiversity effects in petroleum engineering environments, with emphasis on coastal soils, modelling, and sustainability.",
-  },
-  {
-    period: "2023 - 2024",
-    role: "Teaching Assistant",
-    place: "University of Aberdeen",
-    details:
-      "Supported courses including Marine and Wind Energy and Well Testing through tutorials, lectures, course delivery, assessment, and student guidance.",
-  },
-  {
-    period: "2021 - 2022",
-    role: "Lecturer",
-    place: "Azerbaijan State Oil and Industry University",
-    details:
-      "Prepared curriculum and class materials, organized seminars and workshops, and mentored students in research publication activity.",
-  },
-  {
-    period: "2021",
-    role: "Junior Project Engineer",
-    place: "HECOTEC IDC, client JOCAP",
-    details:
-      "Supported project planning, timelines, resources, critical paths, progress reporting, vendor coordination, site visits, and engineering reviews.",
-  },
-];
+    elements.forEach((element) => observer.observe(element));
 
-const publications = [
-  {
-    title:
-      "Biodegradation Potential of Neptunomonas naphthovorans-NAG-2N-126 for Crude Oil Pollution Mitigation",
-    type: "Research preprint",
-    detail: "Experimental and modelling insights, 2024.",
-  },
-  {
-    title: "A digital twin approach to noise exposure modelling and risk analysis",
-    type: "Research paper",
-    detail: "Digital twin, PINN modelling, worker safety, offshore risk analysis.",
-  },
-  {
-    title: "Reducing deaths in traffic accidents with space research and artificial intelligence",
-    type: "IAC conference proceedings",
-    detail: "Published in Proceedings of the International Astronautical Congress, 2023.",
-  },
-];
+    return () => observer.disconnect();
+  }, []);
+}
 
-const conferences = [
-  "32nd CSCST-SCI Conference, University of Aberdeen, 2025",
-  "Reservoir Microbiology Forum, London, 2024",
-  "15th Engineering Symposium, Aberdeen, 2024",
-  "InterPore 2023, Edinburgh",
-];
+function externalLinkProps(href) {
+  if (!href || href.startsWith("mailto:") || href.startsWith("#")) {
+    return {};
+  }
 
-const certifications = [
-  "PMI Agile Certified Practitioner, PMI-ACP",
-  "Project Management Professional, PMP",
-  "Primavera P6 Specialist",
-  "HSE Specialist",
-  "AutoCAD",
-];
+  return { target: "_blank", rel: "noreferrer" };
+}
 
 function Header() {
   return (
@@ -153,7 +93,12 @@ function Header() {
           </a>
         ))}
       </nav>
-      <a className="icon-link" href="https://www.linkedin.com/in/trnmtllmv/" aria-label="LinkedIn profile">
+      <a
+        className="icon-link"
+        href={profile.linkedin}
+        aria-label="LinkedIn profile"
+        {...externalLinkProps(profile.linkedin)}
+      >
         <Linkedin size={19} />
       </a>
     </header>
@@ -163,32 +108,81 @@ function Header() {
 function Hero() {
   return (
     <section className="hero" id="top">
-      <div className="hero-backdrop" aria-hidden="true" style={{ "--hero-image": `url("${asset("bioremediation-hero.png")}")` }} />
+      <div
+        className="hero-backdrop"
+        aria-hidden="true"
+        style={{ "--hero-image": `url("${profile.heroImage}")` }}
+      />
       <div className="hero-content">
-        <div className="hero-copy">
-          <p className="eyebrow">Project Engineer | PMP | PhD Researcher</p>
-          <h1>Turan Mutallimov</h1>
-          <p className="lead">
-            I connect project delivery, petroleum engineering, microbial bioremediation, and data-driven modelling to help energy work become more measurable, safer, and more sustainable.
-          </p>
+        <div className="hero-copy" data-reveal>
+          <p className="eyebrow">{profile.role}</p>
+          <h1>{profile.name}</h1>
+          <p className="hero-thesis">{profile.thesis}</p>
+          <p className="lead">{profile.summary}</p>
           <div className="hero-actions">
-            <a className="primary-button" href="#projects">
-              <Sparkles size={18} />
-              View Work
+            <a className="primary-button" href="#research">
+              <FlaskConical size={18} />
+              Research Focus
             </a>
-            <a className="secondary-button" href="mailto:turan.mutallimov@yahoo.com">
+            <a className="secondary-button" href={`mailto:${profile.email}`}>
               <Mail size={18} />
               Contact
             </a>
           </div>
         </div>
-        <div className="portrait-panel" aria-label="Profile photograph and professional status">
-          <img src={asset("profile.png")} alt="Turan Mutallimov" />
-          <div>
-            <strong>Aberdeen, United Kingdom</strong>
-            <span>Open to energy, research, and project engineering opportunities.</span>
+        <aside className="portrait-panel" aria-label="Professional profile" data-reveal>
+          <img src={profile.portrait} alt={profile.name} />
+          <div className="portrait-copy">
+            <strong>{profile.location}</strong>
+            <span>{profile.affiliation}</span>
           </div>
-        </div>
+          <div className="portrait-links">
+            <a href={profile.linkedin} {...externalLinkProps(profile.linkedin)}>
+              <Linkedin size={16} />
+              LinkedIn
+            </a>
+            <a href={`mailto:${profile.email}`}>
+              <Mail size={16} />
+              Email
+            </a>
+          </div>
+        </aside>
+      </div>
+    </section>
+  );
+}
+
+function Recognition() {
+  return (
+    <section className="recognition-section" id="recognition" aria-label="Selected recognition">
+      <div className="recognition-inner">
+        {recognition.map((item) => {
+          const Icon = iconMap[item.icon] ?? Award;
+          const content = (
+            <>
+              <Icon size={22} />
+              <div>
+                <span>{item.detail}</span>
+                <strong>{item.title}</strong>
+              </div>
+              {item.href ? <ExternalLink size={16} className="external-indicator" /> : null}
+            </>
+          );
+
+          if (item.href) {
+            return (
+              <a className="recognition-item" key={item.title} href={item.href} data-reveal {...externalLinkProps(item.href)}>
+                {content}
+              </a>
+            );
+          }
+
+          return (
+            <article className="recognition-item" key={item.title} data-reveal>
+              {content}
+            </article>
+          );
+        })}
       </div>
     </section>
   );
@@ -196,27 +190,36 @@ function Hero() {
 
 function About() {
   return (
-    <section className="section about" id="about">
-      <div className="section-heading">
-        <p className="eyebrow">Professional Snapshot</p>
-        <h2>Project delivery with a research engine underneath.</h2>
+    <section className="section about-section" id="about">
+      <div className="section-heading" data-reveal>
+        <p className="eyebrow">{about.eyebrow}</p>
+        <h2>{about.title}</h2>
       </div>
-      <div className="stats-grid">
-        {stats.map((item) => (
-          <article className="stat-card" key={item.label}>
-            <strong>{item.value}</strong>
-            <span>{item.label}</span>
-          </article>
-        ))}
+      <div className="about-layout">
+        <div className="about-copy" data-reveal>
+          {about.body.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
+        </div>
+        <div className="proof-grid" data-reveal>
+          {proofPoints.map((item) => (
+            <article className="proof-card" key={item.label}>
+              <strong>{item.value}</strong>
+              <span>{item.label}</span>
+            </article>
+          ))}
+        </div>
       </div>
-      <div className="snapshot-grid">
-        {snapshots.map(({ icon: Icon, title, body }) => (
-          <article className="feature-card" key={title}>
-            <Icon size={24} />
-            <h3>{title}</h3>
-            <p>{body}</p>
-          </article>
-        ))}
+      <div className="focus-grid">
+        {about.focus.map((item, index) => {
+          const Icon = focusIcons[index] ?? CheckCircle2;
+          return (
+            <article className="focus-card" key={item} data-reveal>
+              <Icon size={23} />
+              <span>{item}</span>
+            </article>
+          );
+        })}
       </div>
     </section>
   );
@@ -225,20 +228,21 @@ function About() {
 function Research() {
   return (
     <section className="section research-band" id="research">
-      <div className="research-copy">
-        <p className="eyebrow">Research Focus</p>
-        <h2>Quantifying microbial hydrocarbon degradation in real engineering conditions.</h2>
-        <p>
-          Turan's doctoral work investigates how mathematical models for crude-oil biodegradation in coastal soils can better represent environmental complexity: moisture, pH, oxygen, heavy metals, microbial activity, and other contaminants.
-        </p>
+      <div className="research-copy" data-reveal>
+        <p className="eyebrow">{research.eyebrow}</p>
+        <h2>{research.title}</h2>
+        <p>{research.body}</p>
         <div className="research-list">
-          <span><CheckCircle2 size={18} /> Coastal soil and sediment bioremediation</span>
-          <span><CheckCircle2 size={18} /> Machine learning and statistical modelling</span>
-          <span><CheckCircle2 size={18} /> Digital-twin thinking for field decisions</span>
+          {research.bullets.map((item) => (
+            <span key={item}>
+              <CheckCircle2 size={18} />
+              {item}
+            </span>
+          ))}
         </div>
       </div>
-      <div className="research-visual">
-        <img src={asset("bioremediation-hero.png")} alt="Microbial bioremediation concept with oil droplets in a lab setting" />
+      <div className="research-visual" data-reveal>
+        <img src={research.image} alt="Microbial bioremediation concept with oil droplets in a lab setting" />
       </div>
     </section>
   );
@@ -246,27 +250,49 @@ function Research() {
 
 function Projects() {
   return (
-    <section className="section" id="projects">
-      <div className="section-heading narrow">
+    <section className="section projects-section" id="projects">
+      <div className="section-heading narrow" data-reveal>
         <p className="eyebrow">Selected Work</p>
         <h2>Research translated into tools, evidence, and communication.</h2>
       </div>
       <div className="project-grid">
-        {projects.map((project) => (
-          <article className="project-card" key={project.title}>
-            <img src={project.image} alt="" />
-            <div className="project-body">
-              <span>{project.tag}</span>
-              <h3>{project.title}</h3>
-              <p>{project.body}</p>
-            </div>
-          </article>
-        ))}
+        {projects.map((project) => {
+          const body = (
+            <>
+              <img src={project.image} alt={project.imageAlt} />
+              <div className="project-body">
+                <span>{project.tag}</span>
+                <h3>{project.title}</h3>
+                <p>{project.body}</p>
+                {project.href ? (
+                  <span className="text-link">
+                    Open public page
+                    <ArrowUpRight size={15} />
+                  </span>
+                ) : null}
+              </div>
+            </>
+          );
+
+          if (project.href) {
+            return (
+              <a className="project-card" key={project.title} href={project.href} data-reveal {...externalLinkProps(project.href)}>
+                {body}
+              </a>
+            );
+          }
+
+          return (
+            <article className="project-card" key={project.title} data-reveal>
+              {body}
+            </article>
+          );
+        })}
       </div>
-      <div className="figure-strip">
-        <img src={asset("two-window-kinetics.png")} alt="Two-window biodegradation kinetics chart" />
-        <img src={asset("pore-network-flow.jpg")} alt="Pore network flow visualization" />
-        <img src={asset("bioassay-screening-plate.jpg")} alt="Bioassay screening plate" />
+      <div className="figure-strip" data-reveal>
+        {figureStrip.map((figure) => (
+          <img src={figure.src} alt={figure.alt} key={figure.src} />
+        ))}
       </div>
     </section>
   );
@@ -275,13 +301,13 @@ function Projects() {
 function Experience() {
   return (
     <section className="section experience-band" id="experience">
-      <div className="section-heading">
+      <div className="section-heading" data-reveal>
         <p className="eyebrow">Experience and Education</p>
         <h2>Across energy projects, teaching, and doctoral research.</h2>
       </div>
       <div className="timeline">
         {timeline.map((item) => (
-          <article className="timeline-item" key={`${item.period}-${item.role}`}>
+          <article className="timeline-item" key={`${item.period}-${item.role}`} data-reveal>
             <div className="timeline-marker" aria-hidden="true" />
             <div>
               <span>{item.period}</span>
@@ -299,27 +325,49 @@ function Experience() {
 function Publications() {
   return (
     <section className="section publication-section" id="publications">
-      <div className="section-heading">
-        <p className="eyebrow">Publications, Conferences, Certifications</p>
+      <div className="section-heading" data-reveal>
+        <p className="eyebrow">Publications, Talks, Certifications</p>
         <h2>Signals of research depth and professional delivery discipline.</h2>
       </div>
       <div className="pub-layout">
         <div className="publication-list">
-          {publications.map((pub) => (
-            <article className="publication-card" key={pub.title}>
-              <BookOpen size={22} />
-              <div>
-                <span>{pub.type}</span>
-                <h3>{pub.title}</h3>
-                <p>{pub.detail}</p>
-              </div>
-            </article>
-          ))}
+          {publications.map((pub) => {
+            const content = (
+              <>
+                <BookOpen size={22} />
+                <div>
+                  <span>{pub.type}</span>
+                  <h3>{pub.title}</h3>
+                  <p>{pub.detail}</p>
+                  {pub.href ? (
+                    <span className="text-link">
+                      Open public page
+                      <ArrowUpRight size={15} />
+                    </span>
+                  ) : null}
+                </div>
+              </>
+            );
+
+            if (pub.href) {
+              return (
+                <a className="publication-card" key={pub.title} href={pub.href} data-reveal {...externalLinkProps(pub.href)}>
+                  {content}
+                </a>
+              );
+            }
+
+            return (
+              <article className="publication-card" key={pub.title} data-reveal>
+                {content}
+              </article>
+            );
+          })}
         </div>
-        <aside className="credential-panel">
+        <aside className="credential-panel" data-reveal>
           <div>
             <Presentation size={23} />
-            <h3>Conference presence</h3>
+            <h3>Conference Presence</h3>
             <ul>
               {conferences.map((item) => (
                 <li key={item}>{item}</li>
@@ -344,35 +392,47 @@ function Publications() {
 function Contact() {
   return (
     <section className="section contact-section" id="contact">
-      <div>
+      <div data-reveal>
         <p className="eyebrow">Contact</p>
         <h2>For project engineering, research collaboration, and energy-sector opportunities.</h2>
       </div>
-      <div className="contact-actions">
-        <a className="primary-button" href="mailto:turan.mutallimov@yahoo.com">
+      <div className="contact-actions" data-reveal>
+        <a className="primary-button" href={`mailto:${profile.email}`}>
           <Mail size={18} />
           Email
         </a>
-        <a className="secondary-button" href="https://www.linkedin.com/in/trnmtllmv/">
+        <a className="secondary-button" href={profile.linkedin} {...externalLinkProps(profile.linkedin)}>
           <Linkedin size={18} />
           LinkedIn
         </a>
       </div>
-      <div className="contact-meta">
-        <span><MapPin size={18} /> Aberdeen, United Kingdom</span>
-        <span><GraduationCap size={18} /> University of Aberdeen</span>
-        <span><ShieldCheck size={18} /> PMP-certified project professional</span>
+      <div className="contact-meta" data-reveal>
+        <span>
+          <MapPin size={18} />
+          {profile.location}
+        </span>
+        <span>
+          <GraduationCap size={18} />
+          {profile.affiliation}
+        </span>
+        <span>
+          <ShieldCheck size={18} />
+          PMP-certified project professional
+        </span>
       </div>
     </section>
   );
 }
 
 function App() {
+  useScrollReveal();
+
   return (
     <>
       <Header />
       <main>
         <Hero />
+        <Recognition />
         <About />
         <Research />
         <Projects />
@@ -381,7 +441,7 @@ function App() {
         <Contact />
       </main>
       <footer className="site-footer">
-        <span>Turan Mutallimov</span>
+        <span>{profile.name}</span>
         <a href="#top">
           Back to top
           <ArrowUpRight size={16} />
