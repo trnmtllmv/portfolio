@@ -587,6 +587,12 @@ h3 {
     padding-bottom: 2px;
   }
 
+  .icon-link {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: end;
+  }
+
   .hero-content,
   .research-band,
   .section-heading,
