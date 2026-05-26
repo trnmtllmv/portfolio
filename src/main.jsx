@@ -41,6 +41,7 @@ import {
   researchPillars,
   researchStages,
   skillGroups,
+  supervisors,
 } from "./content";
 import "./styles.css";
 
@@ -256,6 +257,29 @@ function AffiliationStrip() {
           <span>{item.note}</span>
         </article>
       ))}
+    </section>
+  );
+}
+
+function SupervisionTeam() {
+  return (
+    <section className="supervision-strip" aria-label="Supervision team">
+      <div className="supervision-label">
+        <p className="eyebrow">Supervision</p>
+        <h2>PhD supervision team.</h2>
+      </div>
+      <div className="supervisor-grid">
+        {supervisors.map((person) => (
+          <article className="supervisor-card" key={person.name}>
+            <img src={person.image} alt={person.name} />
+            <div>
+              <strong>{person.name}</strong>
+              <span>{person.role}</span>
+              <em>{person.area}</em>
+            </div>
+          </article>
+        ))}
+      </div>
     </section>
   );
 }
@@ -637,6 +661,7 @@ function App() {
       <Header />
       <main>
         <Hero />
+        <SupervisionTeam />
         <About />
         <PhDSystem />
         <Research />

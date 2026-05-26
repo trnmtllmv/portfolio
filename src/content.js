@@ -81,6 +81,33 @@ export const affiliations = [
   },
 ];
 
+export const supervisors = [
+  {
+    name: "Dr Kejian Wu",
+    role: "Academic supervisor",
+    area: "School of Engineering",
+    image: asset("supervisor-kejian.jpg"),
+  },
+  {
+    name: "Prof Hai Deng",
+    role: "Academic supervisor",
+    area: "Natural & Computing Sciences",
+    image: asset("supervisor-hai.webp"),
+  },
+  {
+    name: "Ms Ila Glennie",
+    role: "Industrial supervisor",
+    area: "Subsea operations",
+    image: asset("supervisor-ila.jpg"),
+  },
+  {
+    name: "Mr Michael Grant",
+    role: "Industrial supervisor",
+    area: "Digital twin / 3D model",
+    image: asset("supervisor-michael.jpg"),
+  },
+];
+
 export const proofPoints = [
   {
     value: "Fluid mechanics",
