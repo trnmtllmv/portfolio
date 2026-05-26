@@ -23,9 +23,9 @@ export const profile = {
   portrait: asset("profile-clean.jpg"),
   background: asset("digital-twin-platform-full.png"),
   headline:
-    "I work in fluid mechanics, petroleum engineering, and digital rock: turning pore-scale multiphase-flow evidence into digital-twin decisions.",
+    "I connect porous-media fluid mechanics, petroleum engineering, and digital rock for digital-twin-ready engineering decisions.",
   summary:
-    "My PhD at the University of Aberdeen is centred on fluid mechanics in porous media, microbial crude-oil biodegradation, microfluidic chip experiments, pore-network interpretation, and digital subsurface decision support. Under Dr Kejian Wu's supervision, I connect laboratory evidence, multiphase-flow modelling, subsurface interpretation, and AI-assisted workflow design.",
+    "My PhD at the University of Aberdeen combines microbial crude-oil biodegradation, microfluidic chip experiments, pore-network interpretation, and AI-assisted subsurface workflow design under Dr Kejian Wu's supervision.",
   thesis:
     "My PhD connects fluid mechanics and petroleum engineering with microfluidic chip experiments, digital rock modelling, pore-network interpretation, and offshore digital-twin decision support.",
 };
@@ -235,6 +235,7 @@ export const researchMap = [
     kicker: "PhD strength",
     title: "Pore-scale evidence translated into digital rock descriptors.",
     image: asset("digital-rock-pore-panel.png"),
+    imageFit: "contain",
     body:
       "Digital rock work covers visible pore architecture, phase segmentation, brine/oil/air/biomass occupancy, pressure response, capillarity, and permeability interpretation.",
     points: [
@@ -249,7 +250,8 @@ export const researchMap = [
     label: "Microfluidics",
     kicker: "Pore-scale flow evidence",
     title: "Microfluidic experiments show how saturation state changes microbial oil response.",
-    image: asset("mul-simulator-dashboard.png"),
+    image: asset("microfluidic-dashboard-landscape.png"),
+    imageFit: "contain",
     body:
       "I interpret saturated and partially saturated flow pathways using segmented microfluidic images, pressure response, and pore-scale phase behaviour.",
     points: [
@@ -280,7 +282,8 @@ export const researchMap = [
     label: "Bioremediation",
     kicker: "PhD foundation",
     title: "Microbial biodegradation supplies the experimental backbone.",
-    image: asset("research-multifigure.jpg"),
+    image: asset("experimental-system-schema.png"),
+    imageFit: "contain",
     body:
       "Batch biodegradation, SARA interpretation, growth kinetics, oxygen/nutrient controls, and residual-oil cleanup provide the experimental base for the digital rock branch.",
     points: [
@@ -295,7 +298,7 @@ export const researchMap = [
     label: "Delivery",
     kicker: "Engineering discipline",
     title: "Project engineering connects technical evidence with delivery practice.",
-    image: asset("digital-twin-platform-detail.png"),
+    image: asset("absheron-totalenergies-project.jpg"),
     body:
       "Absheron gas-condensate project support strengthened my planning, reporting, vendor coordination, site-visit, review, and stakeholder communication practice.",
     points: [

@@ -250,8 +250,8 @@ function Hero() {
 function AffiliationStrip() {
   return (
     <section className="affiliation-strip" aria-label="Affiliations and credentials">
-      {affiliations.map((item, index) => (
-        <article className="affiliation-item" key={item.name} data-reveal style={{ "--delay": index }}>
+      {affiliations.map((item) => (
+        <article className="affiliation-item" key={item.name}>
           {item.image ? <img src={item.image} alt={item.name} /> : <strong>{item.mark}</strong>}
           <span>{item.note}</span>
         </article>
@@ -505,7 +505,7 @@ function Recognition() {
     <section className="recognition-section" id="recognition">
       <SectionHeading
         eyebrow="Recognition"
-        title="Awards, certifications, and selected research moments."
+        title="Awards, certifications, and research moments."
         align="center"
       />
       <div className="recognition-grid">
