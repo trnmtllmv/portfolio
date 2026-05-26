@@ -22,7 +22,6 @@ export const profile = {
   email: "turan.mutallimov@yahoo.com",
   portrait: asset("profile-clean.jpg"),
   background: asset("digital-twin-platform-full.png"),
-  heroVisual: asset("digital-rock-pore-panel.png"),
   headline:
     "I work in fluid mechanics, petroleum engineering, and digital rock: turning pore-scale multiphase-flow evidence into digital-twin decisions.",
   summary:
@@ -111,7 +110,7 @@ export const proofPoints = [
 
 export const about = {
   eyebrow: "About",
-  title: "Digital rock first, with project-engineering discipline.",
+  title: "Fluid mechanics, petroleum engineering, and digital rock in one workflow.",
   body: [
     "I am a PhD researcher in petroleum engineering at the University of Aberdeen, working across fluid mechanics, multiphase flow, and digital rock. My research centre of gravity is turning pore-scale experiments, microfluidic images, and pressure/permeability evidence into interpretable models for petroleum and environmental decisions.",
     "Under the supervision of Dr Kejian Wu, and within a bp-collaboration context, I link crude-oil biodegradation, microfluidic chip experiments, image segmentation, capillary behaviour, pressure/permeability interpretation, AI-assisted modelling, and digital twin workflow design. My project-engineering background adds delivery discipline: clear scope, evidence, stakeholder reporting, and decision-ready communication.",
@@ -132,7 +131,7 @@ export const researchStages = [
     tag: "Supervised direction",
     title: "Research question and team context",
     body:
-      "The PhD is organised around petroleum engineering and fluid-mechanics problems where microbial activity, multiphase flow, pore architecture, and environmental risk meet. The digital rock strand is developed under Dr Kejian Wu's supervision and connects to collaboration-facing digital subsurface workflows.",
+      "My PhD addresses petroleum engineering and fluid-mechanics problems where microbial activity, multiphase flow, pore architecture, and environmental risk meet. The digital rock strand is developed under Dr Kejian Wu's supervision and connects to digital subsurface workflows.",
     evidence: "University of Aberdeen PhD, Azerbaijan State Scholarship, supervised digital rock direction",
   },
   {
@@ -150,7 +149,7 @@ export const researchStages = [
     tag: "Microfluidic evidence",
     title: "Microfluidic pore-scale results",
     body:
-      "The microfluidic work gives visible pore-scale evidence of how brine, oil, air, and biomass occupy connected pore space. I use these images to compare saturated and partially saturated pathways in a form that can feed digital rock interpretation.",
+      "Segmented microfluidic images show how brine, oil, air, and biomass occupy connected pore space under saturated and partially saturated flow pathways.",
     evidence: "Glen Lyon crude oil, Oleispira antarctica RB-8T, phase segmentation, pressure response",
   },
   {
@@ -177,7 +176,7 @@ export const researchStages = [
     tag: "Decisions",
     title: "Digital twin and engineering delivery",
     body:
-      "The final layer is operational translation: offshore digital twins, safety architecture, response planning, project communication, and the project-engineering discipline needed to make technical evidence usable.",
+      "Digital twin translation connects offshore models, safety architecture, response planning, project communication, and project-engineering discipline.",
     evidence: "Offshore platform twin visuals, safety publications, and energy project delivery experience",
   },
 ];
@@ -237,7 +236,7 @@ export const researchMap = [
     title: "Pore-scale evidence translated into digital rock descriptors.",
     image: asset("digital-rock-pore-panel.png"),
     body:
-      "The first research story is the digital rock workflow: visible pore architecture, phase segmentation, brine/oil/air/biomass occupancy, pressure response, capillarity, and permeability interpretation.",
+      "Digital rock work covers visible pore architecture, phase segmentation, brine/oil/air/biomass occupancy, pressure response, capillarity, and permeability interpretation.",
     points: [
       "My contribution: research simulator, pore-frame visualisation, and figure-ready evidence pipeline",
       "Microfluidic chip images converted into clear pore-scale descriptors",
@@ -295,10 +294,10 @@ export const researchMap = [
     icon: "BriefcaseBusiness",
     label: "Delivery",
     kicker: "Engineering discipline",
-    title: "Project engineering makes the research easier to trust and use.",
+    title: "Project engineering connects technical evidence with delivery practice.",
     image: asset("digital-twin-platform-detail.png"),
     body:
-      "Experience supporting Absheron gas-condensate project delivery informs the portfolio's practical edge: planning, reporting, vendors, site visits, reviews, and communication with stakeholders.",
+      "Absheron gas-condensate project support strengthened my planning, reporting, vendor coordination, site-visit, review, and stakeholder communication practice.",
     points: [
       "HECOTEC IDC, client JOCAP, Absheron project support",
       "Planning, milestone tracking, vendor coordination, site visits, and reports",
@@ -383,10 +382,10 @@ export const projects = [
   {
     icon: "Cpu",
     name: "Digital Smart Key / Digital Subsurface Workflows",
-    label: "Methods and responsibilities",
+    label: "Digital subsurface methods",
     image: asset("digital-twin-platform-full.png"),
     body:
-      "Collaboration-facing digital subsurface direction connecting physics, AI-assisted modelling, multiscale digital rock, upscaling, reservoir-analysis framing, and offshore decision support.",
+      "Digital subsurface workflow direction connecting physics, AI-assisted modelling, multiscale digital rock, upscaling, reservoir-analysis framing, and offshore decision support.",
     details: [
       "Worked in a team context under Dr Kejian Wu's supervision/leadership",
       "Contributed to pore-scale modelling, microchannel-flow, upscaling, and simulation workflow framing",
@@ -417,7 +416,7 @@ export const projects = [
       "Field-scale dashboards and scenario figures connect microbial evidence to residual-oil cleanup, decommissioning decisions, and environmental engineering communication.",
     details: [
       "Batch evidence, sand-column thinking, dynamic/tidal designs, and field-scale scenarios",
-      "Decision-ready visualisation rather than raw document dumping",
+      "Field-scale visualisation for environmental engineering decisions",
       "Complements the digital rock pathway with environmental engineering outcomes",
     ],
   },
@@ -425,7 +424,7 @@ export const projects = [
     icon: "ShieldCheck",
     name: "Absheron Project Engineering",
     label: "Energy delivery",
-    image: asset("digital-twin-platform-detail.png"),
+    image: asset("absheron-totalenergies-project.jpg"),
     body:
       "Junior project-engineering support for the Absheron gas-condensate field development through HECOTEC IDC, client JOCAP.",
     details: [

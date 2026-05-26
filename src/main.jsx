@@ -232,9 +232,6 @@ function Hero() {
               </span>
             </div>
           </div>
-          <div className="hero-visual-card">
-            <img src={profile.heroVisual} alt="Offshore digital-twin research dashboard" />
-          </div>
           <div className="hero-map" aria-label="Research and career signals">
             {proofPoints.slice(3).map((item, index) => (
               <span key={item.label} style={{ "--index": index }}>
@@ -329,7 +326,7 @@ function PhDSystem() {
       <SectionHeading
         eyebrow="PhD System"
         title="Fluid mechanics, petroleum engineering, and digital rock in one research line."
-        body="I organise my PhD as one connected workflow: laboratory evidence, pore-scale flow, digital rock interpretation, subsurface modelling, and digital-twin decision support."
+        body="Laboratory evidence, pore-scale flow, digital rock interpretation, subsurface modelling, and digital-twin decision support form the core research workflow."
       />
       <div className="pathway-list">
         {researchStages.map((stage, index) => (
@@ -359,10 +356,10 @@ function ResearchMap() {
     <section className="research-map-section" id="research-map">
       <div className="research-map-copy" data-reveal>
         <p className="eyebrow">Research Map</p>
-        <h2>A clean map of how the PhD fits together.</h2>
+        <h2>From pore-scale flow to digital-twin decisions.</h2>
         <p>
-          I use this map to show how pore-scale evidence moves into models, workflows, and
-          engineering decisions.
+          Microfluidic evidence, digital rock descriptors, subsurface workflows, bioremediation, and
+          project delivery connected in one research system.
         </p>
       </div>
       <div className="map-layout">
@@ -423,7 +420,7 @@ function Publications() {
       <SectionHeading
         eyebrow="Publications"
         title="Public outputs that support the digital rock and twin story."
-        body="These outputs support the same theme: porous-media flow, bioremediation, digital twins, and decision support."
+        body="Porous-media flow, bioremediation, digital twins, safety analysis, and decision support."
       />
       <div className="publication-filters" aria-label="Publication filters" data-reveal>
         <Filter size={18} />
@@ -477,7 +474,7 @@ function Projects() {
       <SectionHeading
         eyebrow="Projects"
         title="Digital rock, digital twins, and project delivery."
-        body="I organise my work around the PhD path: pore-scale experiments first, then modelling, digital-twin translation, and engineering delivery."
+        body="Pore-scale experiments, digital rock modelling, digital-twin translation, and energy project delivery."
       />
       <div className="project-grid">
         {projects.map((project, index) => (
@@ -584,8 +581,8 @@ function VisualEvidence() {
     <section className="gallery-section" aria-label="Selected research visuals">
       <SectionHeading
         eyebrow="Visual Evidence"
-        title="Selected figures, pore frames, and twin visuals."
-        body="These figures show pore-scale evidence, digital rock outputs, field-scale translation, and offshore digital-twin visuals."
+        title="Research evidence across scales."
+        body="Microfluidic flow images, digital rock descriptors, field-scale translation, and offshore twin models."
         align="center"
       />
       <div className="gallery-rail">
@@ -608,7 +605,7 @@ function Contact() {
     <section className="contact-section" id="contact">
       <div className="contact-copy" data-reveal>
         <p className="eyebrow">Contact</p>
-        <h2>For research, project, speaking, and collaboration conversations.</h2>
+        <h2>For research, technical projects, presentations, and collaborations.</h2>
         <p>
           Reach me through email, LinkedIn, ORCID, GitHub, or Google Scholar.
         </p>
