@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="720" viewBox="0 0 1100 720">
+<defs>
+<style><![CDATA[
+text{font-family:Arial,Helvetica,sans-serif;fill:#222} .small{font-size:11px} .tick{font-size:10px;fill:#555} .label{font-size:12px;fill:#333} .title{font-size:16px;font-weight:700} .panelletter{font-size:18px;font-weight:700}
+]]></style>
+</defs>
+<rect x="0" y="0" width="100%" height="100%" fill="white"/>
+<text x="40.00" y="40.00" font-size="20" font-weight="700" text-anchor="start" fill="#222">Figure 3. Endpoint pore-space fingerprints</text>
+<text x="40.00" y="64.00" font-size="12" font-weight="400" text-anchor="start" fill="#555">Final 242 h architecture separates emulsifying saturated flow from brine-recovery after partial saturation.</text>
+<text x="135.00" y="186.00" font-size="13" font-weight="400" text-anchor="end" fill="#222">Phase 1
+full brine
+242 h</text>
+<rect x="180.00" y="150.00" width="518.32" height="70.00" rx="0" fill="#4A86C8" stroke="white" stroke-width="1" opacity="1"/>
+<text x="439.16" y="192.00" font-size="12" font-weight="700" text-anchor="middle" fill="white">68.2</text>
+<rect x="698.32" y="150.00" width="126.92" height="70.00" rx="0" fill="#3A9A5B" stroke="white" stroke-width="1" opacity="1"/>
+<text x="761.78" y="192.00" font-size="12" font-weight="700" text-anchor="middle" fill="white">16.7</text>
+<rect x="825.24" y="150.00" width="57.00" height="70.00" rx="0" fill="#E2873B" stroke="white" stroke-width="1" opacity="1"/>
+<text x="853.74" y="192.00" font-size="12" font-weight="700" text-anchor="middle" fill="white">7.5</text>
+<rect x="882.24" y="150.00" width="57.76" height="70.00" rx="0" fill="#C45B5B" stroke="white" stroke-width="1" opacity="1"/>
+<text x="911.12" y="192.00" font-size="12" font-weight="700" text-anchor="middle" fill="white">7.6</text>
+<rect x="940.00" y="150.00" width="0.00" height="70.00" rx="0" fill="#8E8E8E" stroke="white" stroke-width="1" opacity="1"/>
+<rect x="180.00" y="150.00" width="760.00" height="70.00" rx="0" fill="none" stroke="#333" stroke-width="1" opacity="1"/>
+<text x="135.00" y="331.00" font-size="13" font-weight="400" text-anchor="end" fill="#222">Phase 2
+partial sat.
+242 h</text>
+<rect x="180.00" y="295.00" width="685.52" height="70.00" rx="0" fill="#4A86C8" stroke="white" stroke-width="1" opacity="1"/>
+<text x="522.76" y="337.00" font-size="12" font-weight="700" text-anchor="middle" fill="white">90.2</text>
+<rect x="865.52" y="295.00" width="26.60" height="70.00" rx="0" fill="#3A9A5B" stroke="white" stroke-width="1" opacity="1"/>
+<rect x="892.12" y="295.00" width="26.60" height="70.00" rx="0" fill="#E2873B" stroke="white" stroke-width="1" opacity="1"/>
+<rect x="918.72" y="295.00" width="19.76" height="70.00" rx="0" fill="#8E8E8E" stroke="white" stroke-width="1" opacity="1"/>
+<rect x="180.00" y="295.00" width="760.00" height="70.00" rx="0" fill="none" stroke="#333" stroke-width="1" opacity="1"/>
+<line x1="180.00" y1="390.00" x2="180.00" y2="134.00" stroke="#DDD" stroke-width="0.7" opacity="1" stroke-dasharray="2 4"/>
+<text x="180.00" y="415.00" font-size="10" font-weight="400" text-anchor="middle" fill="#555">0%</text>
+<line x1="370.00" y1="390.00" x2="370.00" y2="134.00" stroke="#DDD" stroke-width="0.7" opacity="1" stroke-dasharray="2 4"/>
+<text x="370.00" y="415.00" font-size="10" font-weight="400" text-anchor="middle" fill="#555">25%</text>
+<line x1="560.00" y1="390.00" x2="560.00" y2="134.00" stroke="#DDD" stroke-width="0.7" opacity="1" stroke-dasharray="2 4"/>
+<text x="560.00" y="415.00" font-size="10" font-weight="400" text-anchor="middle" fill="#555">50%</text>
+<line x1="750.00" y1="390.00" x2="750.00" y2="134.00" stroke="#DDD" stroke-width="0.7" opacity="1" stroke-dasharray="2 4"/>
+<text x="750.00" y="415.00" font-size="10" font-weight="400" text-anchor="middle" fill="#555">75%</text>
+<line x1="940.00" y1="390.00" x2="940.00" y2="134.00" stroke="#DDD" stroke-width="0.7" opacity="1" stroke-dasharray="2 4"/>
+<text x="940.00" y="415.00" font-size="10" font-weight="400" text-anchor="middle" fill="#555">100%</text>
+<rect x="180.00" y="456.00" width="15.00" height="9.00" rx="0" fill="#4A86C8" stroke="none" stroke-width="1" opacity="1"/>
+<text x="200.00" y="465.00" font-size="11" font-weight="400" text-anchor="start" fill="#333">Brine</text>
+<rect x="350.00" y="456.00" width="15.00" height="9.00" rx="0" fill="#3A9A5B" stroke="none" stroke-width="1" opacity="1"/>
+<text x="370.00" y="465.00" font-size="11" font-weight="400" text-anchor="start" fill="#333">Biomass</text>
+<rect x="520.00" y="456.00" width="15.00" height="9.00" rx="0" fill="#E2873B" stroke="none" stroke-width="1" opacity="1"/>
+<text x="540.00" y="465.00" font-size="11" font-weight="400" text-anchor="start" fill="#333">Free/disconnected oil</text>
+<rect x="690.00" y="456.00" width="15.00" height="9.00" rx="0" fill="#C45B5B" stroke="none" stroke-width="1" opacity="1"/>
+<text x="710.00" y="465.00" font-size="11" font-weight="400" text-anchor="start" fill="#333">Emulsified oil</text>
+<rect x="860.00" y="456.00" width="15.00" height="9.00" rx="0" fill="#8E8E8E" stroke="none" stroke-width="1" opacity="1"/>
+<text x="880.00" y="465.00" font-size="11" font-weight="400" text-anchor="start" fill="#333">Air</text>
+<text x="180.00" y="540.00" font-size="15" font-weight="700" text-anchor="start" fill="#222">Oil fate contrast</text>
+<line x1="180.00" y1="580.00" x2="180.00" y2="670.00" stroke="#E7E7E7" stroke-width="0.55" opacity="1" stroke-dasharray="2 4"/>
+<text x="180.00" y="686.00" font-size="10" font-weight="400" text-anchor="middle" fill="#555">0</text>
+<line x1="267.50" y1="580.00" x2="267.50" y2="670.00" stroke="#E7E7E7" stroke-width="0.55" opacity="1" stroke-dasharray="2 4"/>
+<text x="267.50" y="686.00" font-size="10" font-weight="400" text-anchor="middle" fill="#555">5</text>
+<line x1="355.00" y1="580.00" x2="355.00" y2="670.00" stroke="#E7E7E7" stroke-width="0.55" opacity="1" stroke-dasharray="2 4"/>
+<text x="355.00" y="686.00" font-size="10" font-weight="400" text-anchor="middle" fill="#555">10</text>
+<line x1="442.50" y1="580.00" x2="442.50" y2="670.00" stroke="#E7E7E7" stroke-width="0.55" opacity="1" stroke-dasharray="2 4"/>
+<text x="442.50" y="686.00" font-size="10" font-weight="400" text-anchor="middle" fill="#555">15</text>
+<line x1="530.00" y1="580.00" x2="530.00" y2="670.00" stroke="#E7E7E7" stroke-width="0.55" opacity="1" stroke-dasharray="2 4"/>
+<text x="530.00" y="686.00" font-size="10" font-weight="400" text-anchor="middle" fill="#555">20</text>
+<line x1="180.00" y1="670.00" x2="530.00" y2="670.00" stroke="#333" stroke-width="1" opacity="1"/>
+<line x1="180.00" y1="580.00" x2="180.00" y2="670.00" stroke="#333" stroke-width="1" opacity="1"/>
+<text x="355.00" y="708.00" font-size="12" font-weight="400" text-anchor="middle" fill="#222">Oil-related final occupancy (%)</text>
+<rect x="180.00" y="585.00" width="264.25" height="22.00" rx="0" fill="#E2873B" stroke="none" stroke-width="1" opacity="0.65"/>
+<rect x="311.25" y="585.00" width="133.00" height="22.00" rx="0" fill="#C45B5B" stroke="none" stroke-width="1" opacity="0.95"/>
+<text x="452.25" y="602.00" font-size="11" font-weight="400" text-anchor="start" fill="#222">Phase 1: 15.1%, ~50% emulsified</text>
+<rect x="180.00" y="630.00" width="61.25" height="22.00" rx="0" fill="#E2873B" stroke="none" stroke-width="1" opacity="0.8"/>
+<text x="249.25" y="647.00" font-size="11" font-weight="400" text-anchor="start" fill="#222">Phase 2: ~3.5%, no persistent emulsion signal</text>
+<text x="650.00" y="575.00" font-size="15" font-weight="700" text-anchor="start" fill="#222">Interpretation</text>
+<text x="650.00" y="605.00" font-size="12" font-weight="400" text-anchor="start" fill="#222">Phase 1 preserves an oil-biomass-brine architecture.</text>
+<text x="650.00" y="627.00" font-size="12" font-weight="400" text-anchor="start" fill="#222">Phase 2 recovers toward brine dominance after gas disruption.</text>
+<text x="650.00" y="649.00" font-size="12" font-weight="400" text-anchor="start" fill="#222">The mechanism changes from interfacial transformation to hydraulic cleanup.</text>
+</svg>

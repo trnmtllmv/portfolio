@@ -1,0 +1,175 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760">
+<defs>
+<style><![CDATA[
+text{font-family:Arial,Helvetica,sans-serif;fill:#222} .small{font-size:11px} .tick{font-size:10px;fill:#555} .label{font-size:12px;fill:#333} .title{font-size:16px;font-weight:700} .panelletter{font-size:18px;font-weight:700}
+]]></style>
+</defs>
+<rect x="0" y="0" width="100%" height="100%" fill="white"/>
+<text x="40.00" y="40.00" font-size="20" font-weight="700" text-anchor="start" fill="#222">Figure 1. Ten-day phase evolution under saturated and partially saturated conditions</text>
+<text x="40.00" y="64.00" font-size="12" font-weight="400" text-anchor="start" fill="#555">Phase 1 shown as additive pore occupancy; Phase 2 shown as corrected 242 h trajectories from the latest figure.</text>
+<line x1="80.00" y1="380.00" x2="550.00" y2="380.00" stroke="#E7E7E7" stroke-width="0.8" opacity="1"/>
+<text x="73.00" y="384.00" font-size="10" font-weight="400" text-anchor="end" fill="#555">0</text>
+<line x1="80.00" y1="315.00" x2="550.00" y2="315.00" stroke="#E7E7E7" stroke-width="0.8" opacity="1"/>
+<text x="73.00" y="319.00" font-size="10" font-weight="400" text-anchor="end" fill="#555">25</text>
+<line x1="80.00" y1="250.00" x2="550.00" y2="250.00" stroke="#E7E7E7" stroke-width="0.8" opacity="1"/>
+<text x="73.00" y="254.00" font-size="10" font-weight="400" text-anchor="end" fill="#555">50</text>
+<line x1="80.00" y1="185.00" x2="550.00" y2="185.00" stroke="#E7E7E7" stroke-width="0.8" opacity="1"/>
+<text x="73.00" y="189.00" font-size="10" font-weight="400" text-anchor="end" fill="#555">75</text>
+<line x1="80.00" y1="120.00" x2="550.00" y2="120.00" stroke="#E7E7E7" stroke-width="0.8" opacity="1"/>
+<text x="73.00" y="124.00" font-size="10" font-weight="400" text-anchor="end" fill="#555">100</text>
+<line x1="80.00" y1="120.00" x2="80.00" y2="380.00" stroke="#E7E7E7" stroke-width="0.55" opacity="1" stroke-dasharray="2 4"/>
+<text x="80.00" y="396.00" font-size="10" font-weight="400" text-anchor="middle" fill="#555">0</text>
+<line x1="173.22" y1="120.00" x2="173.22" y2="380.00" stroke="#E7E7E7" stroke-width="0.55" opacity="1" stroke-dasharray="2 4"/>
+<text x="173.22" y="396.00" font-size="10" font-weight="400" text-anchor="middle" fill="#555">48</text>
+<line x1="223.72" y1="120.00" x2="223.72" y2="380.00" stroke="#E7E7E7" stroke-width="0.55" opacity="1" stroke-dasharray="2 4"/>
+<text x="223.72" y="396.00" font-size="10" font-weight="400" text-anchor="middle" fill="#555">74</text>
+<line x1="313.06" y1="120.00" x2="313.06" y2="380.00" stroke="#E7E7E7" stroke-width="0.55" opacity="1" stroke-dasharray="2 4"/>
+<text x="313.06" y="396.00" font-size="10" font-weight="400" text-anchor="middle" fill="#555">120</text>
+<line x1="429.59" y1="120.00" x2="429.59" y2="380.00" stroke="#E7E7E7" stroke-width="0.55" opacity="1" stroke-dasharray="2 4"/>
+<text x="429.59" y="396.00" font-size="10" font-weight="400" text-anchor="middle" fill="#555">180</text>
+<line x1="550.00" y1="120.00" x2="550.00" y2="380.00" stroke="#E7E7E7" stroke-width="0.55" opacity="1" stroke-dasharray="2 4"/>
+<text x="550.00" y="396.00" font-size="10" font-weight="400" text-anchor="middle" fill="#555">242</text>
+<line x1="80.00" y1="380.00" x2="550.00" y2="380.00" stroke="#333" stroke-width="1" opacity="1"/>
+<line x1="80.00" y1="120.00" x2="80.00" y2="380.00" stroke="#333" stroke-width="1" opacity="1"/>
+<text x="315.00" y="418.00" font-size="12" font-weight="400" text-anchor="middle" fill="#222">Time (h)</text>
+<text x="36.00" y="250.00" font-size="12" font-weight="400" text-anchor="middle" fill="#222" transform="rotate(-90 36.00 250.00)">Pore occupancy (%)</text>
+<text x="80.00" y="108.00" font-size="14" font-weight="700" text-anchor="start" fill="#222">a  Phase 1: fully brine-saturated</text>
+<line x1="670.00" y1="380.00" x2="1140.00" y2="380.00" stroke="#E7E7E7" stroke-width="0.8" opacity="1"/>
+<text x="663.00" y="384.00" font-size="10" font-weight="400" text-anchor="end" fill="#555">0</text>
+<line x1="670.00" y1="315.00" x2="1140.00" y2="315.00" stroke="#E7E7E7" stroke-width="0.8" opacity="1"/>
+<text x="663.00" y="319.00" font-size="10" font-weight="400" text-anchor="end" fill="#555">25</text>
+<line x1="670.00" y1="250.00" x2="1140.00" y2="250.00" stroke="#E7E7E7" stroke-width="0.8" opacity="1"/>
+<text x="663.00" y="254.00" font-size="10" font-weight="400" text-anchor="end" fill="#555">50</text>
+<line x1="670.00" y1="185.00" x2="1140.00" y2="185.00" stroke="#E7E7E7" stroke-width="0.8" opacity="1"/>
+<text x="663.00" y="189.00" font-size="10" font-weight="400" text-anchor="end" fill="#555">75</text>
+<line x1="670.00" y1="120.00" x2="1140.00" y2="120.00" stroke="#E7E7E7" stroke-width="0.8" opacity="1"/>
+<text x="663.00" y="124.00" font-size="10" font-weight="400" text-anchor="end" fill="#555">100</text>
+<line x1="670.00" y1="120.00" x2="670.00" y2="380.00" stroke="#E7E7E7" stroke-width="0.55" opacity="1" stroke-dasharray="2 4"/>
+<text x="670.00" y="396.00" font-size="10" font-weight="400" text-anchor="middle" fill="#555">0</text>
+<line x1="763.22" y1="120.00" x2="763.22" y2="380.00" stroke="#E7E7E7" stroke-width="0.55" opacity="1" stroke-dasharray="2 4"/>
+<text x="763.22" y="396.00" font-size="10" font-weight="400" text-anchor="middle" fill="#555">48</text>
+<line x1="813.72" y1="120.00" x2="813.72" y2="380.00" stroke="#E7E7E7" stroke-width="0.55" opacity="1" stroke-dasharray="2 4"/>
+<text x="813.72" y="396.00" font-size="10" font-weight="400" text-anchor="middle" fill="#555">74</text>
+<line x1="903.06" y1="120.00" x2="903.06" y2="380.00" stroke="#E7E7E7" stroke-width="0.55" opacity="1" stroke-dasharray="2 4"/>
+<text x="903.06" y="396.00" font-size="10" font-weight="400" text-anchor="middle" fill="#555">120</text>
+<line x1="1019.59" y1="120.00" x2="1019.59" y2="380.00" stroke="#E7E7E7" stroke-width="0.55" opacity="1" stroke-dasharray="2 4"/>
+<text x="1019.59" y="396.00" font-size="10" font-weight="400" text-anchor="middle" fill="#555">180</text>
+<line x1="1140.00" y1="120.00" x2="1140.00" y2="380.00" stroke="#E7E7E7" stroke-width="0.55" opacity="1" stroke-dasharray="2 4"/>
+<text x="1140.00" y="396.00" font-size="10" font-weight="400" text-anchor="middle" fill="#555">242</text>
+<line x1="670.00" y1="380.00" x2="1140.00" y2="380.00" stroke="#333" stroke-width="1" opacity="1"/>
+<line x1="670.00" y1="120.00" x2="670.00" y2="380.00" stroke="#333" stroke-width="1" opacity="1"/>
+<text x="905.00" y="418.00" font-size="12" font-weight="400" text-anchor="middle" fill="#222">Time (h)</text>
+<text x="626.00" y="250.00" font-size="12" font-weight="400" text-anchor="middle" fill="#222" transform="rotate(-90 626.00 250.00)">Pore occupancy (%)</text>
+<text x="670.00" y="108.00" font-size="14" font-weight="700" text-anchor="start" fill="#222">b  Phase 2: partially saturated, corrected</text>
+<rect x="80.00" y="96.00" width="93.22" height="9.00" rx="0" fill="#2F8F3A" stroke="white" stroke-width="0.4" opacity="1"/>
+<text x="126.61" y="103.00" font-size="8" font-weight="700" text-anchor="middle" fill="white">Microbe</text>
+<rect x="173.22" y="96.00" width="50.50" height="9.00" rx="0" fill="#B86B2A" stroke="white" stroke-width="0.4" opacity="1"/>
+<text x="198.47" y="103.00" font-size="8" font-weight="700" text-anchor="middle" fill="white">Oil</text>
+<rect x="223.72" y="96.00" width="326.28" height="9.00" rx="0" fill="#1E7FA7" stroke="white" stroke-width="0.4" opacity="1"/>
+<text x="386.86" y="103.00" font-size="8" font-weight="700" text-anchor="middle" fill="white">Brine</text>
+<rect x="670.00" y="96.00" width="46.61" height="9.00" rx="0" fill="#2F8F3A" stroke="white" stroke-width="0.4" opacity="1"/>
+<text x="693.31" y="103.00" font-size="8" font-weight="700" text-anchor="middle" fill="white">Microbe</text>
+<rect x="716.61" y="96.00" width="48.55" height="9.00" rx="0" fill="#B86B2A" stroke="white" stroke-width="0.4" opacity="1"/>
+<text x="740.89" y="103.00" font-size="8" font-weight="700" text-anchor="middle" fill="white">Oil + air</text>
+<rect x="765.17" y="96.00" width="374.83" height="9.00" rx="0" fill="#1E7FA7" stroke="white" stroke-width="0.4" opacity="1"/>
+<text x="952.58" y="103.00" font-size="8" font-weight="700" text-anchor="middle" fill="white">Brine</text>
+<polygon points="80.00,133.00 103.31,136.90 126.61,140.80 149.92,144.70 173.22,143.66 196.53,268.20 223.72,196.70 274.21,196.96 313.06,200.60 394.63,203.98 501.45,212.04 550.00,199.56 550.00,380.00 501.45,380.00 394.63,380.00 313.06,380.00 274.21,380.00 223.72,380.00 196.53,380.00 173.22,380.00 149.92,380.00 126.61,380.00 103.31,380.00 80.00,380.00" fill="#4A86C8" stroke="white" stroke-width="0.4" opacity="0.78"/>
+<polygon points="80.00,132.74 103.31,135.60 126.61,136.90 149.92,134.30 173.22,120.00 196.53,227.90 223.72,176.94 274.21,165.24 313.06,152.50 394.63,170.18 501.45,164.98 550.00,155.62 550.00,199.56 501.45,212.04 394.63,203.98 313.06,200.60 274.21,196.96 223.72,196.70 196.53,268.20 173.22,143.66 149.92,144.70 126.61,140.80 103.31,136.90 80.00,133.00" fill="#3A9A5B" stroke="white" stroke-width="0.4" opacity="0.78"/>
+<polygon points="80.00,132.74 103.31,135.60 126.61,136.90 149.92,134.30 173.22,120.00 196.53,155.10 223.72,143.92 274.21,133.00 313.06,126.50 394.63,136.38 501.45,136.38 550.00,135.60 550.00,155.62 501.45,164.98 394.63,170.18 313.06,152.50 274.21,165.24 223.72,176.94 196.53,227.90 173.22,120.00 149.92,134.30 126.61,136.90 103.31,135.60 80.00,132.74" fill="#E2873B" stroke="white" stroke-width="0.4" opacity="0.78"/>
+<polygon points="80.00,132.74 103.31,135.60 126.61,136.90 149.92,134.30 173.22,120.00 196.53,139.50 223.72,130.92 274.21,119.48 313.06,116.10 394.63,127.28 501.45,128.58 550.00,115.84 550.00,135.60 501.45,136.38 394.63,136.38 313.06,126.50 274.21,133.00 223.72,143.92 196.53,155.10 173.22,120.00 149.92,134.30 126.61,136.90 103.31,135.60 80.00,132.74" fill="#C45B5B" stroke="white" stroke-width="0.4" opacity="0.78"/>
+<polygon points="80.00,132.74 103.31,135.60 126.61,136.90 149.92,134.30 173.22,120.00 196.53,139.50 223.72,130.92 274.21,119.48 313.06,116.10 394.63,127.28 501.45,128.58 550.00,115.84 550.00,115.84 501.45,128.58 394.63,127.28 313.06,116.10 274.21,119.48 223.72,130.92 196.53,139.50 173.22,120.00 149.92,134.30 126.61,136.90 103.31,135.60 80.00,132.74" fill="#8E8E8E" stroke="white" stroke-width="0.4" opacity="0.78"/>
+<polyline points="670.00,122.60 693.31,133.00 716.61,135.60 739.92,315.00 765.17,307.20 778.76,265.60 794.30,271.32 809.83,229.98 833.14,196.96 856.45,185.00 903.06,173.04 949.67,172.00 1019.59,171.22 1089.50,170.18 1112.81,154.58 1128.35,149.12 1140.00,145.48" fill="none" stroke="#4A86C8" stroke-width="2.1" stroke-linejoin="round" stroke-linecap="round" opacity="1"/>
+<circle cx="670.00" cy="122.60" r="3.30" fill="#4A86C8" stroke="white" stroke-width="0.8" opacity="1"/>
+<circle cx="693.31" cy="133.00" r="3.30" fill="#4A86C8" stroke="white" stroke-width="0.8" opacity="1"/>
+<circle cx="716.61" cy="135.60" r="3.30" fill="#4A86C8" stroke="white" stroke-width="0.8" opacity="1"/>
+<circle cx="739.92" cy="315.00" r="3.30" fill="#4A86C8" stroke="white" stroke-width="0.8" opacity="1"/>
+<circle cx="765.17" cy="307.20" r="3.30" fill="#4A86C8" stroke="white" stroke-width="0.8" opacity="1"/>
+<circle cx="778.76" cy="265.60" r="3.30" fill="#4A86C8" stroke="white" stroke-width="0.8" opacity="1"/>
+<circle cx="794.30" cy="271.32" r="3.30" fill="#4A86C8" stroke="white" stroke-width="0.8" opacity="1"/>
+<circle cx="809.83" cy="229.98" r="3.30" fill="#4A86C8" stroke="white" stroke-width="0.8" opacity="1"/>
+<circle cx="833.14" cy="196.96" r="3.30" fill="#4A86C8" stroke="white" stroke-width="0.8" opacity="1"/>
+<circle cx="856.45" cy="185.00" r="3.30" fill="#4A86C8" stroke="white" stroke-width="0.8" opacity="1"/>
+<circle cx="903.06" cy="173.04" r="3.30" fill="#4A86C8" stroke="white" stroke-width="0.8" opacity="1"/>
+<circle cx="949.67" cy="172.00" r="3.30" fill="#4A86C8" stroke="white" stroke-width="0.8" opacity="1"/>
+<circle cx="1019.59" cy="171.22" r="3.30" fill="#4A86C8" stroke="white" stroke-width="0.8" opacity="1"/>
+<circle cx="1089.50" cy="170.18" r="3.30" fill="#4A86C8" stroke="white" stroke-width="0.8" opacity="1"/>
+<circle cx="1112.81" cy="154.58" r="3.30" fill="#4A86C8" stroke="white" stroke-width="0.8" opacity="1"/>
+<circle cx="1128.35" cy="149.12" r="3.30" fill="#4A86C8" stroke="white" stroke-width="0.8" opacity="1"/>
+<circle cx="1140.00" cy="145.48" r="3.30" fill="#4A86C8" stroke="white" stroke-width="0.8" opacity="1"/>
+<polyline points="670.00,376.36 693.31,367.00 716.61,337.10 739.92,341.00 765.17,348.80 778.76,376.36 794.30,376.36 809.83,376.10 833.14,375.84 856.45,375.06 903.06,374.02 949.67,373.24 1019.59,370.90 1089.50,367.78 1112.81,369.08 1128.35,370.12 1140.00,370.90" fill="none" stroke="#3A9A5B" stroke-width="2.1" stroke-linejoin="round" stroke-linecap="round" opacity="1"/>
+<circle cx="670.00" cy="376.36" r="3.30" fill="#3A9A5B" stroke="white" stroke-width="0.8" opacity="1"/>
+<circle cx="693.31" cy="367.00" r="3.30" fill="#3A9A5B" stroke="white" stroke-width="0.8" opacity="1"/>
+<circle cx="716.61" cy="337.10" r="3.30" fill="#3A9A5B" stroke="white" stroke-width="0.8" opacity="1"/>
+<circle cx="739.92" cy="341.00" r="3.30" fill="#3A9A5B" stroke="white" stroke-width="0.8" opacity="1"/>
+<circle cx="765.17" cy="348.80" r="3.30" fill="#3A9A5B" stroke="white" stroke-width="0.8" opacity="1"/>
+<circle cx="778.76" cy="376.36" r="3.30" fill="#3A9A5B" stroke="white" stroke-width="0.8" opacity="1"/>
+<circle cx="794.30" cy="376.36" r="3.30" fill="#3A9A5B" stroke="white" stroke-width="0.8" opacity="1"/>
+<circle cx="809.83" cy="376.10" r="3.30" fill="#3A9A5B" stroke="white" stroke-width="0.8" opacity="1"/>
+<circle cx="833.14" cy="375.84" r="3.30" fill="#3A9A5B" stroke="white" stroke-width="0.8" opacity="1"/>
+<circle cx="856.45" cy="375.06" r="3.30" fill="#3A9A5B" stroke="white" stroke-width="0.8" opacity="1"/>
+<circle cx="903.06" cy="374.02" r="3.30" fill="#3A9A5B" stroke="white" stroke-width="0.8" opacity="1"/>
+<circle cx="949.67" cy="373.24" r="3.30" fill="#3A9A5B" stroke="white" stroke-width="0.8" opacity="1"/>
+<circle cx="1019.59" cy="370.90" r="3.30" fill="#3A9A5B" stroke="white" stroke-width="0.8" opacity="1"/>
+<circle cx="1089.50" cy="367.78" r="3.30" fill="#3A9A5B" stroke="white" stroke-width="0.8" opacity="1"/>
+<circle cx="1112.81" cy="369.08" r="3.30" fill="#3A9A5B" stroke="white" stroke-width="0.8" opacity="1"/>
+<circle cx="1128.35" cy="370.12" r="3.30" fill="#3A9A5B" stroke="white" stroke-width="0.8" opacity="1"/>
+<circle cx="1140.00" cy="370.90" r="3.30" fill="#3A9A5B" stroke="white" stroke-width="0.8" opacity="1"/>
+<polyline points="670.00,380.00 693.31,380.00 716.61,380.00 739.92,130.40 765.17,133.00 778.76,343.08 794.30,347.24 809.83,347.76 833.14,349.58 856.45,351.40 903.06,349.84 949.67,351.14 1019.59,347.76 1089.50,350.62 1112.81,361.80 1128.35,366.48 1140.00,370.90" fill="none" stroke="#E2873B" stroke-width="2.1" stroke-linejoin="round" stroke-linecap="round" opacity="1"/>
+<circle cx="670.00" cy="380.00" r="3.30" fill="#E2873B" stroke="white" stroke-width="0.8" opacity="1"/>
+<circle cx="693.31" cy="380.00" r="3.30" fill="#E2873B" stroke="white" stroke-width="0.8" opacity="1"/>
+<circle cx="716.61" cy="380.00" r="3.30" fill="#E2873B" stroke="white" stroke-width="0.8" opacity="1"/>
+<circle cx="739.92" cy="130.40" r="3.30" fill="#E2873B" stroke="white" stroke-width="0.8" opacity="1"/>
+<circle cx="765.17" cy="133.00" r="3.30" fill="#E2873B" stroke="white" stroke-width="0.8" opacity="1"/>
+<circle cx="778.76" cy="343.08" r="3.30" fill="#E2873B" stroke="white" stroke-width="0.8" opacity="1"/>
+<circle cx="794.30" cy="347.24" r="3.30" fill="#E2873B" stroke="white" stroke-width="0.8" opacity="1"/>
+<circle cx="809.83" cy="347.76" r="3.30" fill="#E2873B" stroke="white" stroke-width="0.8" opacity="1"/>
+<circle cx="833.14" cy="349.58" r="3.30" fill="#E2873B" stroke="white" stroke-width="0.8" opacity="1"/>
+<circle cx="856.45" cy="351.40" r="3.30" fill="#E2873B" stroke="white" stroke-width="0.8" opacity="1"/>
+<circle cx="903.06" cy="349.84" r="3.30" fill="#E2873B" stroke="white" stroke-width="0.8" opacity="1"/>
+<circle cx="949.67" cy="351.14" r="3.30" fill="#E2873B" stroke="white" stroke-width="0.8" opacity="1"/>
+<circle cx="1019.59" cy="347.76" r="3.30" fill="#E2873B" stroke="white" stroke-width="0.8" opacity="1"/>
+<circle cx="1089.50" cy="350.62" r="3.30" fill="#E2873B" stroke="white" stroke-width="0.8" opacity="1"/>
+<circle cx="1112.81" cy="361.80" r="3.30" fill="#E2873B" stroke="white" stroke-width="0.8" opacity="1"/>
+<circle cx="1128.35" cy="366.48" r="3.30" fill="#E2873B" stroke="white" stroke-width="0.8" opacity="1"/>
+<circle cx="1140.00" cy="370.90" r="3.30" fill="#E2873B" stroke="white" stroke-width="0.8" opacity="1"/>
+<polyline points="670.00,380.00 693.31,380.00 716.61,380.00 739.92,237.00 765.17,276.00 778.76,263.52 794.30,289.52 809.83,323.32 833.14,343.60 856.45,355.56 903.06,371.94 949.67,372.20 1019.59,372.46 1089.50,372.98 1112.81,374.28 1128.35,373.76 1140.00,373.24" fill="none" stroke="#8E8E8E" stroke-width="2.1" stroke-linejoin="round" stroke-linecap="round" opacity="1"/>
+<circle cx="670.00" cy="380.00" r="3.30" fill="#8E8E8E" stroke="white" stroke-width="0.8" opacity="1"/>
+<circle cx="693.31" cy="380.00" r="3.30" fill="#8E8E8E" stroke="white" stroke-width="0.8" opacity="1"/>
+<circle cx="716.61" cy="380.00" r="3.30" fill="#8E8E8E" stroke="white" stroke-width="0.8" opacity="1"/>
+<circle cx="739.92" cy="237.00" r="3.30" fill="#8E8E8E" stroke="white" stroke-width="0.8" opacity="1"/>
+<circle cx="765.17" cy="276.00" r="3.30" fill="#8E8E8E" stroke="white" stroke-width="0.8" opacity="1"/>
+<circle cx="778.76" cy="263.52" r="3.30" fill="#8E8E8E" stroke="white" stroke-width="0.8" opacity="1"/>
+<circle cx="794.30" cy="289.52" r="3.30" fill="#8E8E8E" stroke="white" stroke-width="0.8" opacity="1"/>
+<circle cx="809.83" cy="323.32" r="3.30" fill="#8E8E8E" stroke="white" stroke-width="0.8" opacity="1"/>
+<circle cx="833.14" cy="343.60" r="3.30" fill="#8E8E8E" stroke="white" stroke-width="0.8" opacity="1"/>
+<circle cx="856.45" cy="355.56" r="3.30" fill="#8E8E8E" stroke="white" stroke-width="0.8" opacity="1"/>
+<circle cx="903.06" cy="371.94" r="3.30" fill="#8E8E8E" stroke="white" stroke-width="0.8" opacity="1"/>
+<circle cx="949.67" cy="372.20" r="3.30" fill="#8E8E8E" stroke="white" stroke-width="0.8" opacity="1"/>
+<circle cx="1019.59" cy="372.46" r="3.30" fill="#8E8E8E" stroke="white" stroke-width="0.8" opacity="1"/>
+<circle cx="1089.50" cy="372.98" r="3.30" fill="#8E8E8E" stroke="white" stroke-width="0.8" opacity="1"/>
+<circle cx="1112.81" cy="374.28" r="3.30" fill="#8E8E8E" stroke="white" stroke-width="0.8" opacity="1"/>
+<circle cx="1128.35" cy="373.76" r="3.30" fill="#8E8E8E" stroke="white" stroke-width="0.8" opacity="1"/>
+<circle cx="1140.00" cy="373.24" r="3.30" fill="#8E8E8E" stroke="white" stroke-width="0.8" opacity="1"/>
+<rect x="80.00" y="421.00" width="15.00" height="9.00" rx="0" fill="#4A86C8" stroke="none" stroke-width="1" opacity="1"/>
+<text x="100.00" y="430.00" font-size="11" font-weight="400" text-anchor="start" fill="#333">Brine</text>
+<rect x="260.00" y="421.00" width="15.00" height="9.00" rx="0" fill="#3A9A5B" stroke="none" stroke-width="1" opacity="1"/>
+<text x="280.00" y="430.00" font-size="11" font-weight="400" text-anchor="start" fill="#333">Biomass</text>
+<rect x="440.00" y="421.00" width="15.00" height="9.00" rx="0" fill="#E2873B" stroke="none" stroke-width="1" opacity="1"/>
+<text x="460.00" y="430.00" font-size="11" font-weight="400" text-anchor="start" fill="#333">Oil/disconnected oil</text>
+<rect x="620.00" y="421.00" width="15.00" height="9.00" rx="0" fill="#C45B5B" stroke="none" stroke-width="1" opacity="1"/>
+<text x="640.00" y="430.00" font-size="11" font-weight="400" text-anchor="start" fill="#333">Emulsified oil</text>
+<rect x="800.00" y="421.00" width="15.00" height="9.00" rx="0" fill="#8E8E8E" stroke="none" stroke-width="1" opacity="1"/>
+<text x="820.00" y="430.00" font-size="11" font-weight="400" text-anchor="start" fill="#333">Air</text>
+<rect x="82.00" y="485.00" width="470.00" height="150.00" rx="4" fill="#FAFAFA" stroke="#DDD" stroke-width="1" opacity="1"/>
+<text x="105.00" y="515.00" font-size="15" font-weight="700" text-anchor="start" fill="#222">Phase 1 endpoint signature</text>
+<text x="105.00" y="545.00" font-size="12" font-weight="400" text-anchor="start" fill="#333">Biomass retained: 16.7% of pore space</text>
+<text x="105.00" y="566.00" font-size="12" font-weight="400" text-anchor="start" fill="#333">Oil-related burden: 15.1%</text>
+<text x="105.00" y="587.00" font-size="12" font-weight="400" text-anchor="start" fill="#333">Emulsion ratio: ~50% of oil-related phase</text>
+<text x="105.00" y="608.00" font-size="12" font-weight="400" text-anchor="start" fill="#333">Interpretation: water-continuous bio-emulsification</text>
+<rect x="670.00" y="485.00" width="470.00" height="150.00" rx="4" fill="#FAFAFA" stroke="#DDD" stroke-width="1" opacity="1"/>
+<text x="692.00" y="515.00" font-size="15" font-weight="700" text-anchor="start" fill="#222">Phase 2 endpoint signature</text>
+<text x="692.00" y="545.00" font-size="12" font-weight="400" text-anchor="start" fill="#333">Brine recovery to ~90.2% by 242 h</text>
+<text x="692.00" y="566.00" font-size="12" font-weight="400" text-anchor="start" fill="#333">Oil/disconnected oil falls to ~3.5%</text>
+<text x="692.00" y="587.00" font-size="12" font-weight="400" text-anchor="start" fill="#333">Air collapses from ~44.8% to ~2.6% after disturbance</text>
+<text x="692.00" y="608.00" font-size="12" font-weight="400" text-anchor="start" fill="#333">Interpretation: gas disruption followed by hydraulic recovery</text>
+</svg>
