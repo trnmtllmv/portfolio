@@ -664,7 +664,7 @@ h3 {
 
 @media (min-width: 1081px) and (min-height: 920px) {
   .affiliation-strip {
-    margin-bottom: 22px;
+    margin: -2px auto 22px;
   }
 
   .supervision-strip {
