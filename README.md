@@ -1,10 +1,10 @@
 # Turan Mutallimov Portfolio
 
-Professional personal homepage for Turan Mutallimov, built with React and Vite and deployed to GitHub Pages.
+Academic personal homepage for Turan Mutallimov, built with React and Vite and deployed to GitHub Pages.
 
 Public URL: <https://trnmtllmv.github.io/portfolio/>
 
-The site is designed as a public LinkedIn companion: project delivery, petroleum engineering research, microbial bioremediation, digital twins, ventures, selected publications, awards, and professional contact details. Source decks and private records are not published.
+The site is designed as a public academic and professional portfolio: petroleum engineering research, microbial bioremediation, offshore digital twins, project delivery, selected publications, awards, skills, and professional contact details. Private identity documents, raw CV documents, source decks, and private records are not published.
 
 ## Development
 

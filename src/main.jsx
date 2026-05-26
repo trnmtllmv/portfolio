@@ -5,8 +5,6 @@ import {
   Award,
   BookOpen,
   BriefcaseBusiness,
-  ChevronLeft,
-  ChevronRight,
   Cpu,
   Database,
   ExternalLink,
@@ -29,20 +27,19 @@ import {
   about,
   accounts,
   affiliations,
-  digitalTwin,
   education,
   experience,
   gallery,
-  heroNodes,
   navItems,
   profile,
+  projects,
   proofPoints,
   publications,
   recognition,
+  researchMap,
   researchMetrics,
   researchPillars,
-  ventures,
-  worlds,
+  skillGroups,
 } from "./content";
 import "./styles.css";
 
@@ -92,6 +89,39 @@ function useScrollReveal() {
   }, []);
 }
 
+function useActiveSection(items) {
+  const sectionIds = useMemo(() => items.map(([, href]) => href.replace("#", "")), [items]);
+  const [activeId, setActiveId] = useState(sectionIds[0]);
+
+  useEffect(() => {
+    const sections = sectionIds
+      .map((id) => document.getElementById(id))
+      .filter(Boolean);
+
+    if (!("IntersectionObserver" in window) || sections.length === 0) {
+      return undefined;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+        if (visible?.target?.id) {
+          setActiveId(visible.target.id);
+        }
+      },
+      { rootMargin: "-22% 0px -58% 0px", threshold: [0.08, 0.18, 0.32] },
+    );
+
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, [sectionIds]);
+
+  return activeId;
+}
+
 function externalLinkProps(href) {
   if (!href || href.startsWith("mailto:") || href.startsWith("#")) {
     return {};
@@ -116,6 +146,8 @@ function SectionHeading({ eyebrow, title, body, align = "left" }) {
 }
 
 function Header() {
+  const activeId = useActiveSection(navItems);
+
   return (
     <header className="site-header">
       <a className="brand" href="#top" aria-label="Turan Mutallimov home">
@@ -123,7 +155,7 @@ function Header() {
       </a>
       <nav className="main-nav" aria-label="Primary navigation">
         {navItems.map(([label, href]) => (
-          <a key={href} href={href}>
+          <a key={href} href={href} className={activeId === href.slice(1) ? "is-active" : ""}>
             {label}
           </a>
         ))}
@@ -154,6 +186,24 @@ function Hero() {
           <h1>{profile.name}</h1>
           <p className="hero-headline">{profile.headline}</p>
           <p className="hero-summary">{profile.summary}</p>
+          <div className="hero-actions">
+            <a className="primary-button" href="#research">
+              <Microscope size={18} />
+              Research Focus
+            </a>
+            <a className="secondary-button" href="#publications">
+              <BookOpen size={18} />
+              Publications
+            </a>
+          </div>
+          <div className="hero-proof" aria-label="Profile proof points">
+            {proofPoints.slice(0, 3).map((item) => (
+              <span key={item.label}>
+                <strong>{item.value}</strong>
+                {item.label}
+              </span>
+            ))}
+          </div>
           <div className="account-row" aria-label="Public profiles">
             {accounts.map((account) => (
               <a
@@ -167,16 +217,6 @@ function Hero() {
                 <span>{account.label}</span>
               </a>
             ))}
-          </div>
-          <div className="hero-actions">
-            <a className="primary-button" href="#worlds">
-              <Sparkles size={18} />
-              Enter My World
-            </a>
-            <a className="secondary-button" href="#publications">
-              <BookOpen size={18} />
-              Publications
-            </a>
           </div>
         </div>
 
@@ -192,12 +232,13 @@ function Hero() {
             </div>
           </div>
           <div className="hero-visual-card">
-            <img src={profile.heroVisual} alt="Research and digital systems visual" />
+            <img src={profile.heroVisual} alt="Offshore digital-twin research dashboard" />
           </div>
-          <div className="world-map" aria-label="Turan's professional worlds">
-            {heroNodes.map((node, index) => (
-              <span key={node} style={{ "--index": index }}>
-                {node}
+          <div className="hero-map" aria-label="Research and career signals">
+            {proofPoints.slice(3).map((item, index) => (
+              <span key={item.label} style={{ "--index": index }}>
+                <strong>{item.value}</strong>
+                {item.label}
               </span>
             ))}
           </div>
@@ -210,9 +251,9 @@ function Hero() {
 
 function AffiliationStrip() {
   return (
-    <section className="affiliation-strip" aria-label="Affiliations and ventures">
-      {affiliations.map((item) => (
-        <article className="affiliation-item" key={item.name} data-reveal>
+    <section className="affiliation-strip" aria-label="Affiliations and credentials">
+      {affiliations.map((item, index) => (
+        <article className="affiliation-item" key={item.name} data-reveal style={{ "--delay": index }}>
           {item.image ? <img src={item.image} alt={item.name} /> : <strong>{item.mark}</strong>}
           <span>{item.note}</span>
         </article>
@@ -252,88 +293,12 @@ function About() {
   );
 }
 
-function WorldsCarousel() {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const active = worlds[activeIndex];
-
-  useEffect(() => {
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (prefersReducedMotion) {
-      return undefined;
-    }
-
-    const timer = window.setInterval(() => {
-      setActiveIndex((current) => (current + 1) % worlds.length);
-    }, 8000);
-
-    return () => window.clearInterval(timer);
-  }, []);
-
-  const go = (direction) => {
-    setActiveIndex((current) => (current + direction + worlds.length) % worlds.length);
-  };
-
-  return (
-    <section className="section worlds-section" id="worlds">
-      <span className="anchor-alias" id="projects" aria-hidden="true" />
-      <SectionHeading
-        eyebrow="Selected Worlds"
-        title="Five spaces that explain the whole person, not just one project."
-        body="The page is designed as a guided room: research evidence, offshore decision systems, ventures, public service, and professional delivery all sit in one clean narrative."
-      />
-      <div className="worlds-carousel" data-reveal>
-        <div className="world-media">
-          <img src={active.image} alt={active.title} />
-        </div>
-        <div className="world-copy">
-          <p className="eyebrow">{active.kicker}</p>
-          <h3>{active.title}</h3>
-          <p>{active.body}</p>
-          <ul className="world-facts">
-            {active.facts.map((fact) => (
-              <li key={fact}>
-                <Sparkles size={16} />
-                {fact}
-              </li>
-            ))}
-          </ul>
-          <div className="carousel-controls" aria-label="Selected worlds carousel controls">
-            <button type="button" className="icon-button" onClick={() => go(-1)} aria-label="Previous world">
-              <ChevronLeft size={20} />
-            </button>
-            <span>
-              {String(activeIndex + 1).padStart(2, "0")} / {String(worlds.length).padStart(2, "0")}
-            </span>
-            <button type="button" className="icon-button" onClick={() => go(1)} aria-label="Next world">
-              <ChevronRight size={20} />
-            </button>
-          </div>
-        </div>
-      </div>
-      <div className="world-tabs" role="tablist" aria-label="World selector">
-        {worlds.map((world, index) => (
-          <button
-            type="button"
-            key={world.id}
-            className={index === activeIndex ? "is-active" : ""}
-            onClick={() => setActiveIndex(index)}
-            role="tab"
-            aria-selected={index === activeIndex}
-          >
-            {world.label}
-          </button>
-        ))}
-      </div>
-    </section>
-  );
-}
-
 function Research() {
   return (
     <section className="section research-section" id="research">
       <SectionHeading
         eyebrow="Research"
-        title="Bioremediation work made measurable, visual, and useful."
+        title="Microbial biodegradation, offshore decisions, and model-ready evidence."
         body={profile.thesis}
       />
       <div className="research-grid">
@@ -357,67 +322,55 @@ function Research() {
   );
 }
 
-function DigitalTwin() {
+function ResearchMap() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const active = researchMap[activeIndex];
+
   return (
-    <section className="digital-twin-section" id="digital-twins">
-      <div className="digital-copy" data-reveal>
-        <p className="eyebrow">{digitalTwin.eyebrow}</p>
-        <h2>{digitalTwin.title}</h2>
-        <p>{digitalTwin.body}</p>
+    <section className="research-map-section" id="research-map">
+      <div className="research-map-copy" data-reveal>
+        <p className="eyebrow">Research Map</p>
+        <h2>A clean map of how the CV fits together.</h2>
+        <p>
+          This interactive section keeps the academic story easy to scan: the PhD core, digital-twin
+          publications, porous-media presentation, project-engineering delivery, and applied-impact
+          projects each have a distinct place.
+        </p>
       </div>
-      <div className="digital-layout">
-        <div className="digital-visual" data-reveal>
-          <img src={digitalTwin.image} alt="Digital twin dashboard and offshore decision visual" />
-        </div>
-        <div className="digital-list">
-          {digitalTwin.items.map((item) => (
-            <article className="digital-item" key={item.title} data-reveal>
-              <h3>{item.title}</h3>
-              <p>{item.body}</p>
-              {item.href ? (
-                <a href={item.href} {...externalLinkProps(item.href)}>
-                  Open public record
-                  <ExternalLink size={15} />
-                </a>
-              ) : null}
-            </article>
+      <div className="map-layout">
+        <div className="map-node-grid" role="tablist" aria-label="Research map topics" data-reveal>
+          {researchMap.map((node, index) => (
+            <button
+              type="button"
+              key={node.id}
+              className={index === activeIndex ? "is-active" : ""}
+              onClick={() => setActiveIndex(index)}
+              role="tab"
+              aria-selected={index === activeIndex}
+              aria-controls="research-map-panel"
+              style={{ "--delay": index }}
+            >
+              <IconByName name={node.icon} size={20} />
+              <span>{node.label}</span>
+            </button>
           ))}
         </div>
-      </div>
-    </section>
-  );
-}
-
-function Ventures() {
-  return (
-    <section className="section ventures-section" id="ventures">
-      <SectionHeading
-        eyebrow="Ventures"
-        title="Startup and social-impact work with a safety-and-service centre of gravity."
-        body="Helptix is now updated from the attached deck as a medical-service access platform for emergency location, ambulance support, first-aid guidance, and care coordination."
-      />
-      <div className="venture-grid">
-        {ventures.map((venture, index) => (
-          <article className="venture-card" key={venture.name} data-reveal style={{ "--delay": index }}>
-            <div className="venture-image">
-              <img src={venture.image} alt={`${venture.name} visual`} />
-              {venture.logo ? <img className="venture-logo" src={venture.logo} alt={`${venture.name} logo`} /> : null}
-            </div>
-            <div className="venture-copy">
-              <span>
-                <IconByName name={venture.icon} size={17} />
-                {venture.label}
-              </span>
-              <h3>{venture.name}</h3>
-              <p>{venture.body}</p>
-              <ul>
-                {venture.details.map((detail) => (
-                  <li key={detail}>{detail}</li>
-                ))}
-              </ul>
-            </div>
-          </article>
-        ))}
+        <article className="map-detail" id="research-map-panel" data-reveal>
+          <img src={active.image} alt={`${active.label} visual`} />
+          <div>
+            <p className="eyebrow">{active.kicker}</p>
+            <h3>{active.title}</h3>
+            <p>{active.body}</p>
+            <ul>
+              {active.points.map((point) => (
+                <li key={point}>
+                  <Sparkles size={15} />
+                  {point}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </article>
       </div>
     </section>
   );
@@ -437,8 +390,8 @@ function Publications() {
     <section className="section publications-section" id="publications">
       <SectionHeading
         eyebrow="Publications"
-        title="Public outputs across digital twins, bioremediation, AI, and safety."
-        body="This section uses public records and DOI/portal links where exact records are available. Google Scholar is linked as a search because an exact profile was not safely verified."
+        title="Updated public outputs from the latest CV."
+        body="The publication list uses DOI and public records where available. The arXiv DOI is linked to the verified five-digit arXiv identifier."
       />
       <div className="publication-filters" aria-label="Publication filters" data-reveal>
         <Filter size={18} />
@@ -456,12 +409,15 @@ function Publications() {
       <div className="publication-list">
         {visiblePublications.map((publication) => (
           <article className="publication-card" key={publication.title} data-reveal>
-            <div>
+            <div className="publication-main">
               <span>{publication.category}</span>
               <h3>{publication.title}</h3>
               <p>{publication.venue}</p>
             </div>
-            <p>{publication.detail}</p>
+            <div className="publication-detail">
+              <strong>{publication.meta}</strong>
+              <p>{publication.detail}</p>
+            </div>
             <div className="publication-links">
               {publication.href ? (
                 <a href={publication.href} {...externalLinkProps(publication.href)}>
@@ -483,20 +439,58 @@ function Publications() {
   );
 }
 
+function Projects() {
+  return (
+    <section className="section projects-section" id="projects">
+      <SectionHeading
+        eyebrow="Projects"
+        title="Selected work, ordered by academic relevance."
+        body="The site keeps ventures visible, but the primary story is research, digital-twin safety, and project-engineering credibility."
+      />
+      <div className="project-grid">
+        {projects.map((project, index) => (
+          <article className="project-card" key={project.name} data-reveal style={{ "--delay": index }}>
+            <img src={project.image} alt={`${project.name} visual`} />
+            <div className="project-copy">
+              <span>
+                <IconByName name={project.icon} size={17} />
+                {project.label}
+              </span>
+              <h3>{project.name}</h3>
+              <p>{project.body}</p>
+              <ul>
+                {project.details.map((detail) => (
+                  <li key={detail}>{detail}</li>
+                ))}
+              </ul>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 function Recognition() {
   return (
     <section className="recognition-section" id="recognition">
       <SectionHeading
         eyebrow="Recognition"
-        title="Awards, certifications, and public research moments."
+        title="Awards, certifications, and selected research moments."
         align="center"
       />
       <div className="recognition-grid">
         {recognition.map((item, index) => (
-          <article className="recognition-item" key={`${item.title}-${item.detail}`} data-reveal style={{ "--delay": index }}>
+          <article
+            className="recognition-item"
+            key={`${item.title}-${item.detail}`}
+            data-reveal
+            style={{ "--delay": index }}
+          >
             <IconByName name={item.icon} size={24} />
-            <span>{item.detail}</span>
+            <span>{item.date}</span>
             <strong>{item.title}</strong>
+            <p>{item.detail}</p>
           </article>
         ))}
       </div>
@@ -509,7 +503,7 @@ function Experience() {
     <section className="section experience-section" id="experience">
       <SectionHeading
         eyebrow="Experience"
-        title="A timeline that moves between research, teaching, and project delivery."
+        title="Research, teaching, and project delivery in one timeline."
       />
       <div className="experience-layout">
         <div className="timeline">
@@ -522,31 +516,47 @@ function Experience() {
             </article>
           ))}
         </div>
-        <div className="education-panel" data-reveal>
-          <h3>Education</h3>
-          {education.map((item) => (
-            <article key={item.degree}>
-              <span>{item.period}</span>
-              <strong>{item.degree}</strong>
-              <p>{item.place}</p>
-            </article>
-          ))}
-        </div>
+        <aside className="career-aside" data-reveal>
+          <div className="education-panel">
+            <h3>Education</h3>
+            {education.map((item) => (
+              <article key={item.degree}>
+                <span>{item.period}</span>
+                <strong>{item.degree}</strong>
+                <p>{item.place}</p>
+                <em>{item.note}</em>
+              </article>
+            ))}
+          </div>
+          <div className="skills-panel">
+            <h3>Skills and Languages</h3>
+            {skillGroups.map((group) => (
+              <article key={group.title}>
+                <strong>{group.title}</strong>
+                <div>
+                  {group.items.map((item) => (
+                    <span key={item}>{item}</span>
+                  ))}
+                </div>
+              </article>
+            ))}
+          </div>
+        </aside>
       </div>
     </section>
   );
 }
 
-function Gallery() {
+function VisualEvidence() {
   return (
-    <section className="gallery-section" id="gallery">
+    <section className="gallery-section" aria-label="Selected research visuals">
       <SectionHeading
-        eyebrow="Gallery"
-        title="A figure carousel: selected visuals, not a document dump."
-        body="Curated public-facing visuals from research, digital twins, Helptix, Icarus, and modelling work."
+        eyebrow="Visual Evidence"
+        title="Selected figures and dashboards."
+        body="A compact visual rail keeps the page memorable without turning it into a document dump."
         align="center"
       />
-      <div className="gallery-rail" aria-label="Selected visual carousel">
+      <div className="gallery-rail">
         {gallery.map((item) => (
           <article className="gallery-card" key={item.title} data-reveal>
             <img src={item.image} alt={item.title} />
@@ -568,8 +578,9 @@ function Contact() {
         <p className="eyebrow">Contact</p>
         <h2>For research, project, speaking, and collaboration conversations.</h2>
         <p>
-          Professional contact is kept simple and public-facing: email, LinkedIn, ORCID, GitHub, and
-          Aberdeen location.
+          Professional contact is intentionally public-facing: email, LinkedIn, ORCID, GitHub, and
+          Google Scholar search. Private identity documents, source files, and raw CV documents are
+          kept off the public site.
         </p>
       </div>
       <div className="contact-grid" data-reveal>
@@ -600,14 +611,13 @@ function App() {
       <main>
         <Hero />
         <About />
-        <WorldsCarousel />
         <Research />
-        <DigitalTwin />
-        <Ventures />
+        <ResearchMap />
         <Publications />
-        <Recognition />
+        <Projects />
+        <VisualEvidence />
         <Experience />
-        <Gallery />
+        <Recognition />
         <Contact />
       </main>
       <footer className="site-footer">

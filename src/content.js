@@ -3,32 +3,31 @@ const asset = (name) => `${baseUrl}assets/${name}`;
 
 export const navItems = [
   ["About", "#about"],
-  ["Worlds", "#worlds"],
   ["Research", "#research"],
-  ["Digital Twins", "#digital-twins"],
-  ["Ventures", "#ventures"],
+  ["Research Map", "#research-map"],
   ["Publications", "#publications"],
-  ["Recognition", "#recognition"],
+  ["Projects", "#projects"],
   ["Experience", "#experience"],
+  ["Recognition", "#recognition"],
   ["Contact", "#contact"],
 ];
 
 export const profile = {
   name: "Turan Mutallimov",
-  role: "PhD Researcher | Project Engineer | PMP",
-  shortRole: "Researcher, engineer, builder",
+  role: "PhD Researcher in Petroleum Engineering | PMP-certified Project Engineer",
+  shortRole: "PhD researcher, project engineer, PMP",
   location: "Aberdeen, Scotland, UK",
   affiliation: "University of Aberdeen",
   email: "turan.mutallimov@yahoo.com",
   portrait: asset("profile-clean.jpg"),
   background: asset("offshore-platform-hero.jpg"),
-  heroVisual: asset("world-hero.png"),
+  heroVisual: asset("phd-field-dashboard-overview.png"),
   headline:
-    "I build evidence-driven systems for energy, environment, safety, and human impact.",
+    "I work at the intersection of petroleum engineering, microbial bioremediation, offshore safety, and digital-twin decision systems.",
   summary:
-    "My work connects petroleum engineering research, project delivery, digital twins, startup thinking, and social-impact initiatives. The common thread is turning complex technical problems into tools, decisions, and stories people can actually use.",
+    "My current PhD research at the University of Aberdeen is funded by the Azerbaijan State Scholarship and developed in close collaboration with bp. Alongside the research, I bring project-engineering experience from energy delivery, including planning, vendor coordination, site visits, reporting, and stakeholder communication.",
   thesis:
-    "Current PhD work: microbial crude-oil biodegradation, coastal-soil bioremediation, environmental-factor modelling, and responsible digital-twin thinking for safer offshore decisions.",
+    "Research focus: impacts of microbial biodegradation and biodiversity on petroleum engineering environments, with applications in offshore operations, residual-oil cleanup during decommissioning, and model-ready environmental decision support.",
 };
 
 export const accounts = [
@@ -73,175 +72,91 @@ export const affiliations = [
   {
     name: "bp",
     image: asset("logo-bp.png"),
-    note: "Research collaboration context",
+    note: "Research collaboration",
   },
   {
-    name: "Helptix",
-    image: asset("logo-helptix.png"),
-    note: "Digital health venture",
+    name: "HECOTEC IDC / JOCAP",
+    mark: "JOCAP",
+    note: "Energy project delivery",
   },
   {
-    name: "Icarus",
-    mark: "Icarus",
-    note: "Safety technology venture",
+    name: "PMI",
+    mark: "PMP",
+    note: "PMP and PMI-ACP",
   },
   {
-    name: "Təbəssüm",
-    mark: "Təbəssüm",
-    note: "Charity and social impact",
+    name: "Azerbaijan State Scholarship",
+    mark: "Scholarship",
+    note: "Doctoral study funding",
   },
 ];
 
 export const proofPoints = [
   {
     value: "PMP",
-    label: "Certified project delivery",
+    label: "Project Management Professional, 2024-2027",
   },
   {
-    value: "PhD",
-    label: "Petroleum engineering researcher",
+    value: "PMI-ACP",
+    label: "Agile Certified Practitioner, 2024-2027",
   },
   {
-    value: "5",
-    label: "Public research outputs listed",
+    value: "US$1.4B+",
+    label: "Absheron EPS project budget context supported",
   },
   {
-    value: "2",
-    label: "Engineering symposium awards",
+    value: "bp",
+    label: "Close collaboration context for doctoral research",
   },
   {
-    value: "41%",
-    label: "Observed crude-oil degradation signal",
+    value: "6",
+    label: "Public outputs and conference records listed",
   },
   {
-    value: "3.5x",
-    label: "Biomass increase in biodegradation work",
-  },
-];
-
-export const heroNodes = [
-  "Bioremediation",
-  "Digital twins",
-  "Offshore safety",
-  "Icarus Suit",
-  "Helptix",
-  "Təbəssüm",
-  "Project delivery",
-  "Publications",
-];
-
-export const worlds = [
-  {
-    id: "bioremediation",
-    label: "Bioremediation Research",
-    kicker: "PhD research world",
-    title: "Microbes, crude oil, coastal soils, and model-ready evidence.",
-    image: asset("research-multifigure.jpg"),
-    body:
-      "A doctoral research stream investigating microbial crude-oil biodegradation under real environmental constraints: moisture, pH, oxygen, heavy metals, oil fractions, and microbial activity.",
-    facts: [
-      "Neptunomonas, Oleispira, and Streptomyces screening",
-      "GC-FID, GC-MS, SARA, sand-column, and pore-network workflows",
-      "Environmental-factor modelling for coastal bioremediation",
-    ],
-  },
-  {
-    id: "digital-twins",
-    label: "Offshore Digital Twins",
-    kicker: "Decision systems",
-    title: "From offshore noise exposure to modular safety architecture.",
-    image: asset("digital-twin-dashboard.jpg"),
-    body:
-      "Co-authored digital-twin work spans offshore noise-risk modelling and modular safety architecture for decision-making, with public outputs connected through DOI and research-portal records.",
-    facts: [
-      "Ocean Engineering noise-risk digital twin article",
-      "Reliability Engineering & System Safety DOI-listed architecture work",
-      "Physics-informed and data-driven safety thinking",
-    ],
-  },
-  {
-    id: "icarus",
-    label: "Icarus Suit",
-    kicker: "Safety venture",
-    title: "Wearable motorcycle safety concept for injury-aware emergency response.",
-    image: asset("icarus-cover.jpg"),
-    body:
-      "Icarus is a smart protective-suit concept for motorcyclists, focused on detecting rider injury signals and helping emergency services receive more useful context faster.",
-    facts: [
-      "Wearable sensing for crash and injury context",
-      "Hospital and first-aid notification direction",
-      "Curated venture story without exposing the source deck",
-    ],
-  },
-  {
-    id: "helptix",
-    label: "Helptix",
-    kicker: "Digital health venture",
-    title: "Medical-service access, ambulance location, and first-aid guidance.",
-    image: asset("helptix-app.jpg"),
-    body:
-      "Helptix is framed from the attached venture deck as digital infrastructure for accessing medical services, including ambulance support, accurate location finding, injury-type context, doctor/driver communication, blood search, remote licensed staff, and first-aid guidance.",
-    facts: [
-      "Google Maps, Directions, Geocoding, Firebase, Android, Figma",
-      "Designed around hospitals, patients, and emergency users",
-      "Includes a partnership story with Icarus Suit",
-    ],
-  },
-  {
-    id: "tebessum",
-    label: "Təbəssüm",
-    kicker: "Social impact",
-    title: "A charity identity kept deliberately simple and human.",
-    image: asset("tebessum-impact.jpg"),
-    body:
-      "Təbəssüm is represented as Turan's charity and social-impact space. Until public details are ready, the website presents it as a clean text-mark with careful, non-inflated language.",
-    facts: [
-      "Charity and social-impact identity",
-      "Presented without administrative source documents",
-      "Reserved for future public storytelling",
-    ],
+    value: "3",
+    label: "Major 2025-2026 presentation awards",
   },
 ];
 
 export const about = {
   eyebrow: "About",
-  title: "A personal space for engineering, research, ventures, and impact.",
+  title: "Academic depth with project-engineering discipline.",
   body: [
-    "Turan Mutallimov is a PMP-certified project engineer and PhD researcher in petroleum engineering at the University of Aberdeen. His work brings together energy project coordination, laboratory research, mathematical modelling, technical communication, and early-stage venture building.",
-    "The professional direction is broad but coherent: build systems that improve decisions. In research, that means making microbial biodegradation measurable and useful for coastal and offshore environmental decisions. In digital twins, it means translating risk into operational insight. In ventures, it means turning urgent human problems into structured tools.",
+    "Turan Mutallimov is a PhD researcher in petroleum engineering at the University of Aberdeen and a PMP-certified project engineer. His work connects microbial crude-oil biodegradation, offshore safety, decommissioning, digital-twin response planning, and evidence-led engineering communication.",
+    "Before the PhD, Turan supported energy project delivery in Azerbaijan, including planning and reporting workflows for the Absheron gas-condensate field development through HECOTEC IDC, client JOCAP. That delivery background shapes the research: models and experiments should become clearer decisions, not just documents.",
   ],
   focus: [
-    "Project engineering, planning, reporting, and stakeholder coordination",
-    "Microbial crude-oil biodegradation and coastal-soil bioremediation",
-    "Offshore digital twins, risk modelling, and safety decision support",
-    "Startup concepts across medical access, wearable safety, and social impact",
+    "Microbial biodegradation, biodiversity, and residual-oil cleanup",
+    "Digital twins for offshore safety and response planning",
+    "Project planning, critical paths, vendor coordination, and reporting",
+    "Technical writing, data visualization, and cross-functional communication",
   ],
 };
 
 export const researchPillars = [
   {
     icon: "Microscope",
-    title: "Microbial Systems",
+    title: "Microbial Biodegradation",
     body:
-      "Screening and interpreting bacteria with hydrocarbon-degradation potential, including Neptunomonas, Oleispira, and Streptomyces workstreams.",
+      "Investigating microbes, crude oil, coastal soils, SARA fractions, biomass growth, and biodegradation signals under environmental constraints.",
   },
   {
     icon: "FlaskConical",
     title: "Experimental Evidence",
     body:
-      "Laboratory workflows across crude oil, coastal soils, SARA fractions, bioassays, GC methods, and static/dynamic sand-column scenarios.",
+      "Laboratory workflows across bioassays, GC methods, static and dynamic sand-column scenarios, and pore-network interpretation.",
   },
   {
     icon: "Database",
     title: "Model-Ready Data",
     body:
-      "Environmental-factor integration for moisture, pH, oxygen, heavy metals, biomass, and degradation kinetics.",
+      "Translating moisture, pH, oxygen, heavy metals, biomass, and degradation kinetics into data that can support engineering decisions.",
   },
   {
     icon: "Cpu",
-    title: "Decision Translation",
+    title: "Digital-Twin Decisions",
     body:
-      "Turning experiments and models into visual, communicable decision support for energy, environment, and offshore operations.",
+      "Connecting research evidence to offshore risk visibility, response planning, safety architecture, and decommissioning support.",
   },
 ];
 
@@ -256,97 +171,116 @@ export const researchMetrics = [
   },
   {
     value: "20%",
-    label: "Oxygen-availability shift observed in biodegradation behaviour",
+    label: "Oxygen-availability shift observed",
   },
   {
     value: "25-85%",
-    label: "Scenario TPH removal range in dynamic sand-column framing",
+    label: "Scenario TPH removal range",
   },
 ];
 
-export const digitalTwin = {
-  eyebrow: "Digital Twins",
-  title: "A safety and decision layer above complex offshore systems.",
-  body:
-    "The digital-twin work on this site shows the direction, publications, and transferable thinking behind safer offshore decisions. The emphasis is risk visibility, modular architecture, and engineering communication.",
-  image: asset("digital-twin-field.jpg"),
-  items: [
-    {
-      title: "Noise Exposure Modelling",
-      body:
-        "A co-authored Ocean Engineering publication using digital-twin thinking for offshore worker safety, risk analysis, and predictive modelling.",
-      href: "https://abdn.elsevierpure.com/en/publications/a-digital-twin-approach-to-noise-exposure-modelling-and-risk-anal/",
-    },
-    {
-      title: "Modular Offshore Safety Architecture",
-      body:
-        "A DOI-listed Reliability Engineering & System Safety work on modular digital-twin architecture for offshore safety and decision-making.",
-      href: "https://doi.org/10.1016/j.ress.2026.112428",
-    },
-    {
-      title: "Operational Storytelling",
-      body:
-        "Dashboards, models, and visuals are treated as a decision language for engineers, operators, stakeholders, and research audiences.",
-    },
-  ],
-};
-
-export const ventures = [
+export const researchMap = [
   {
-    icon: "HeartHandshake",
-    name: "Helptix",
-    label: "Digital health infrastructure",
+    id: "bioremediation",
+    icon: "Microscope",
+    label: "Bioremediation",
+    kicker: "PhD core",
+    title: "Microbial crude-oil cleanup as an engineering evidence system.",
+    image: asset("research-multifigure.jpg"),
+    body:
+      "The central research thread studies microbial biodegradation and biodiversity effects in petroleum engineering environments, with a public-facing emphasis on residual-oil cleanup and coastal-soil remediation.",
+    points: [
+      "Neptunomonas naphthovorans research preprint",
+      "Bioassay, GC, SARA, sand-column, and modelling workflows",
+      "Environmental factors translated into decision-ready evidence",
+    ],
+  },
+  {
+    id: "digital-twins",
+    icon: "Cpu",
+    label: "Digital Twins",
+    kicker: "Safety systems",
+    title: "Offshore digital twins for safety and operational response.",
+    image: asset("digital-twin-dashboard.jpg"),
+    body:
+      "Published and DOI-listed work connects offshore noise exposure, modular safety architecture, and response planning for complex North Sea operating contexts.",
+    points: [
+      "Ocean Engineering noise-risk digital twin article",
+      "Reliability Engineering & System Safety DOI-listed architecture work",
+      "Risk visibility for operators, engineers, and decision-makers",
+    ],
+  },
+  {
+    id: "porous-media",
+    icon: "Database",
+    label: "Porous Media",
+    kicker: "InterPore 2026",
+    title: "Multiphase flow thinking beyond simple Darcy framing.",
+    image: asset("phd-pore-network-flow.jpg"),
+    body:
+      "The CV adds an InterPore 2026 oral presentation on quantifying multiphase flow in complex porous media, connecting petroleum engineering, modelling, and visualization.",
+    points: [
+      "Oral presentation at InterPore 2026",
+      "Session: MS20 Special Session in Honor of Jun Yao",
+      "Porous-media flow and modelling communication",
+    ],
+  },
+  {
+    id: "project-delivery",
+    icon: "BriefcaseBusiness",
+    label: "Project Delivery",
+    kicker: "Energy execution",
+    title: "Project-engineering habits from large-scale energy delivery.",
+    image: asset("digital-twin-field.jpg"),
+    body:
+      "Experience supporting the Absheron gas-condensate field development informs the site's practical edge: planning, timelines, critical paths, contractors, vendors, reviews, and stakeholder reporting.",
+    points: [
+      "HECOTEC IDC, client JOCAP",
+      "Absheron EPS budget context exceeding US$1.4B",
+      "Planning, progress tracking, site visits, and design reviews",
+    ],
+  },
+  {
+    id: "ventures",
+    icon: "Rocket",
+    label: "Ventures",
+    kicker: "Applied impact",
+    title: "Safety and service concepts kept secondary to academic credibility.",
     image: asset("helptix-app.jpg"),
-    logo: asset("logo-helptix.png"),
     body:
-      "A medical-service access concept for ambulance support, accurate location finding, injury-type dispatch context, doctor/driver communication, blood requests, remote licensed staff, and first-aid instructions.",
-    details: [
-      "Built around hospitals, patients, and emergency users",
-      "Deck technology stack: Google Maps, Directions, Geocoding, Firebase, Android, Figma, Java/Kotlin",
-      "Public pitch direction includes a partnership story with Icarus Suit",
-    ],
-  },
-  {
-    icon: "ShieldCheck",
-    name: "Icarus Suit",
-    label: "Wearable safety technology",
-    image: asset("icarus-solution.jpg"),
-    body:
-      "A smart motorcycle-safety suit concept focused on crash context, injury awareness, and faster emergency communication.",
-    details: [
-      "Wearable sensing and injury-context direction",
-      "Safety and emergency-response positioning",
-      "Presented as a curated venture narrative, not raw pitch material",
-    ],
-  },
-  {
-    icon: "Sparkles",
-    name: "Təbəssüm",
-    label: "Charity and social impact",
-    image: asset("tebessum-impact.jpg"),
-    body:
-      "A charity organisation identity included as part of Turan's wider social-impact world, kept intentionally concise until more public material is ready.",
-    details: [
-      "Human-centred impact space",
-      "Clean text-mark representation",
-      "No private registration or administrative data exposed",
+      "Helptix, Icarus, and Təbəssüm remain present as selected applied-impact projects, but the redesigned site keeps them curated and professional rather than letting them overpower the academic story.",
+    points: [
+      "Helptix medical-service access concept",
+      "Icarus wearable motorcycle safety concept",
+      "Təbəssüm charity and social-impact identity",
     ],
   },
 ];
 
 export const publications = [
   {
-    title: "A modular digital twin architecture for offshore safety and decision-making: A North Sea platform case study",
+    title:
+      "A Modular Digital Twin Architecture for Offshore Safety and Decision-Making: A North Sea Platform Case Study",
     category: "Digital twins",
     venue: "Reliability Engineering & System Safety",
+    meta: "Journal article, DOI-listed record",
     detail:
-      "ORCID-listed article with DOI record for modular offshore safety and decision-making architecture.",
+      "CV lists October 2026 issue timing; public site presents it as a DOI-listed/forthcoming record to avoid implying a past issue date.",
     href: "https://doi.org/10.1016/j.ress.2026.112428",
   },
   {
-    title: "A digital twin approach to noise exposure modelling and risk analysis",
+    title: "Beyond Darcy's Law: Quantifications of Multiphase Flow in Complex Porous Media",
+    category: "Porous media",
+    venue: "InterPore2026",
+    meta: "Oral presentation, May 2026",
+    detail:
+      "Conference presentation in MS20 Special Session in Honor of Jun Yao, connecting multiphase flow, porous media, and petroleum engineering modelling.",
+  },
+  {
+    title: "A Digital Twin Approach to Noise Exposure Modelling and Risk Analysis",
     category: "Digital twins",
     venue: "Ocean Engineering",
+    meta: "Journal article, January 2026",
     detail:
       "Digital twin and predictive risk-analysis work for offshore noise exposure and worker safety.",
     href: "https://doi.org/10.1016/j.oceaneng.2025.123629",
@@ -357,76 +291,132 @@ export const publications = [
     title: "AttentionDep: Domain-Aware Attention for Explainable Depression Severity Assessment",
     category: "AI",
     venue: "arXiv",
+    meta: "Preprint, September 2025",
     detail:
       "Explainable depression-severity assessment using domain-aware attention for health-related AI research.",
     href: "https://doi.org/10.48550/arXiv.2510.00706",
   },
   {
     title:
-      "Biodegradation Potential of Neptunomonas naphthovoran for Crude Oil Pollution Mitigation",
+      "Biodegradation Potential of Neptunomonas naphthovorans - NAG-2N-126 for Crude Oil Pollution Mitigation: Experimental and Modelling Insights",
     category: "Bioremediation",
     venue: "bioRxiv",
+    meta: "Preprint, June 2024",
     detail:
       "Experimental and modelling insights into microbial crude-oil pollution mitigation.",
     href: "https://doi.org/10.1101/2024.05.31.596902",
   },
   {
-    title: "Reducing deaths in traffic accidents with space research and artificial intelligence",
+    title: "Reducing Deaths in Traffic Accidents with Space Research and Artificial Intelligence",
     category: "Safety AI",
     venue: "International Astronautical Congress",
+    meta: "Conference proceedings, April 2023",
     detail:
       "Conference proceedings work connecting safety, transport risk, space research, and artificial intelligence.",
   },
+];
+
+export const projects = [
   {
-    title: "Microbial Guardians of the Seas: Unlocking Bacteria's Power for Crude Oil Cleanup",
-    category: "Public seminar",
-    venue: "UFAZ research seminar",
-    detail:
-      "Public research seminar on microbial biodegradation, petroleum engineering, and crude-oil cleanup.",
-    href: "https://www.ufaz.az/en/events/phd-student-at-the-university-of-aberdeen-turan-mutallimov-will-deliver-a-research-seminar/",
+    icon: "Microscope",
+    name: "Bioremediation Research Platform",
+    label: "PhD research",
+    image: asset("phd-biodegradation-growth.png"),
+    body:
+      "Microbial crude-oil biodegradation research for residual-oil cleanup, coastal soils, environmental modelling, and decommissioning-relevant decision support.",
+    details: [
+      "Funded by Azerbaijan State Scholarship",
+      "Developed in close collaboration with bp",
+      "Connects lab evidence, modelling, and public research communication",
+    ],
+  },
+  {
+    icon: "Cpu",
+    name: "Offshore Safety Digital Twins",
+    label: "Published research",
+    image: asset("phd-field-dashboard-scenario.png"),
+    body:
+      "Digital-twin work spanning offshore noise exposure modelling and modular architecture for safety and decision-making.",
+    details: [
+      "Ocean Engineering DOI-linked article",
+      "Reliability Engineering & System Safety DOI-linked record",
+      "Decision-support visuals for complex offshore systems",
+    ],
+  },
+  {
+    icon: "BriefcaseBusiness",
+    name: "Absheron Project Engineering",
+    label: "Energy delivery",
+    image: asset("digital-twin-field.jpg"),
+    body:
+      "Junior project-engineering support for the Absheron gas-condensate field development through HECOTEC IDC, client JOCAP.",
+    details: [
+      "Supported planning, timelines, resources, and critical paths",
+      "Tracked progress against milestones for senior stakeholders",
+      "Coordinated with vendors, contractors, site visits, and reviews",
+    ],
+  },
+  {
+    icon: "HeartHandshake",
+    name: "Helptix, Icarus, and Təbəssüm",
+    label: "Ventures and impact",
+    image: asset("helptix-app.jpg"),
+    body:
+      "Curated applied-impact work across medical-service access, wearable motorcycle safety, and charity identity.",
+    details: [
+      "Presented as public-facing concepts, not raw private pitch material",
+      "Safety and service centre of gravity",
+      "Kept secondary to the academic and engineering profile",
+    ],
   },
 ];
 
 export const recognition = [
   {
     icon: "Award",
-    title: "Best Poster Award",
-    detail: "16th Engineering Symposium",
+    title: "Industry Impact Award - Oral Presentation",
+    detail: "17th Engineering Research Symposium, University of Aberdeen",
+    date: "May 2026",
+  },
+  {
+    icon: "Presentation",
+    title: "Second Place Winner - Oral Presentation",
+    detail: "32nd CSCST-SCI Conference, Society of Chemical Industry",
+    date: "August 2025",
   },
   {
     icon: "Sparkles",
-    title: "Industry Impact Award",
-    detail: "17th Engineering Symposium",
+    title: "First Place Winner - Poster Presentation",
+    detail: "16th Engineering Research Symposium, University of Aberdeen",
+    date: "May 2025",
   },
   {
     icon: "ShieldCheck",
     title: "Project Management Professional",
-    detail: "PMP certification, valid 2024-2027",
+    detail: "Project Management Institute certification",
+    date: "2024-2027",
   },
   {
     icon: "ShieldCheck",
     title: "PMI Agile Certified Practitioner",
-    detail: "PMI-ACP certification, valid 2024-2027",
+    detail: "Project Management Institute certification",
+    date: "2024-2027",
   },
   {
-    icon: "Presentation",
-    title: "Reservoir Microbiology Forum",
-    detail: "London, 2024 selected technical presentation",
-  },
-  {
-    icon: "BookOpen",
+    icon: "GraduationCap",
     title: "Azerbaijan State Scholarship",
-    detail: "Doctoral study support for PhD research",
+    detail: "Competitive national doctoral study award",
+    date: "2019-2023",
   },
 ];
 
 export const experience = [
   {
-    period: "2022 - Present",
+    period: "Oct. 2022 - Present",
     role: "PhD Candidate, Petroleum Engineering",
     place: "University of Aberdeen",
     details:
-      "Researching microbial biodegradation and biodiversity effects in petroleum engineering environments, with emphasis on coastal soils, modelling, and sustainable remediation.",
+      "Researching the impacts of microbial biodegradation and biodiversity on petroleum engineering environments, including digital-twin response planning for offshore operations and strategies for cleaning residual oil during decommissioning.",
   },
   {
     period: "2023 - 2024",
@@ -436,25 +426,25 @@ export const experience = [
       "Supported well testing, marine energy systems, and wind energy teaching through tutorials, assessment, student guidance, and technical delivery.",
   },
   {
-    period: "2021 - 2022",
-    role: "Lecturer",
-    place: "Azerbaijan State Oil and Industry University",
-    details:
-      "Prepared curriculum material, organised seminars and workshops, and mentored students in research communication.",
-  },
-  {
-    period: "2021",
+    period: "Feb. 2021 - Dec. 2021",
     role: "Junior Project Engineer",
     place: "HECOTEC IDC, client JOCAP",
     details:
-      "Supported planning, reporting, vendor coordination, site visits, and engineering review workflows for energy project delivery.",
+      "Supported the Absheron gas-condensate field development, including project plans, timelines, resource requirements, critical paths, milestone tracking, stakeholder reporting, vendor and contractor coordination, site visits, and engineering reviews.",
   },
   {
-    period: "2018 - 2019",
+    period: "Oct. 2018 - Jul. 2019",
     role: "Training Department Administrative Manager",
     place: "Technical Education Center",
     details:
-      "Coordinated training operations, documentation, participant communication, and administrative delivery.",
+      "Developed training programmes, coordinated trainers and trainees, managed scheduling and logistics, and tracked training metrics to identify improvement areas.",
+  },
+  {
+    period: "2018 - 2019",
+    role: "Petroleum and Oil-Gas Engineering Intern",
+    place: "Balakhani Operating Company and SOCAR",
+    details:
+      "Interpreted well-log data, used specialist applications and modelling techniques, evaluated hydrocarbon potential, and assessed operational risks including geohazards.",
   },
 ];
 
@@ -463,48 +453,65 @@ export const education = [
     degree: "PhD, Petroleum Engineering",
     place: "University of Aberdeen",
     period: "2022 - Present",
+    note:
+      "Azerbaijan State Scholarship-funded doctoral research, developed in close collaboration with bp.",
   },
   {
     degree: "MSc, Offshore Engineering",
     place: "University of Bologna",
     period: "2019 - 2021",
+    note: "Research topic: wind-load effects on storage tanks in Azerbaijan. GPA: 96/110.",
   },
   {
     degree: "BSc, Oil and Gas Engineering",
     place: "Azerbaijan State Oil and Industry University",
     period: "2015 - 2019",
+    note:
+      "Research topic: oil recovery factor for offshore oil fields. GPA: 96/100 (Hons). Sabah Groups programme.",
+  },
+];
+
+export const skillGroups = [
+  {
+    title: "Technical",
+    items: ["MATLAB", "Python", "R", "LaTeX", "AutoCAD", "SolidWorks", "Microsoft Office"],
+  },
+  {
+    title: "Data and Research",
+    items: [
+      "Data visualization",
+      "Statistical modelling",
+      "Machine learning",
+      "Experimental design",
+      "Laboratory management",
+      "Technical writing",
+    ],
+  },
+  {
+    title: "Languages",
+    items: ["Azerbaijani (native)", "English (fluent)", "Turkish (fluent)"],
   },
 ];
 
 export const gallery = [
   {
-    title: "Research Evidence Board",
-    tag: "Bioremediation",
-    image: asset("research-multifigure.jpg"),
+    title: "Model Validation",
+    tag: "Research evidence",
+    image: asset("phd-model-validation.png"),
+  },
+  {
+    title: "Pore-Network Visualisation",
+    tag: "Porous media",
+    image: asset("phd-pore-visualisation.png"),
+  },
+  {
+    title: "Two-Window Kinetics",
+    tag: "Biodegradation",
+    image: asset("phd-two-window-kinetics.png"),
   },
   {
     title: "Digital Twin Dashboard",
     tag: "Offshore safety",
     image: asset("digital-twin-dashboard.jpg"),
-  },
-  {
-    title: "Helptix App Direction",
-    tag: "Medical access",
-    image: asset("helptix-app.jpg"),
-  },
-  {
-    title: "Icarus Suit Concept",
-    tag: "Wearable safety",
-    image: asset("icarus-solution.jpg"),
-  },
-  {
-    title: "Modelling Heatmap",
-    tag: "Data story",
-    image: asset("research-heatmap.jpg"),
-  },
-  {
-    title: "Pore Network Flow",
-    tag: "Simulation",
-    image: asset("pore-network-flow.jpg"),
   },
 ];
