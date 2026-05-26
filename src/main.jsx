@@ -329,7 +329,7 @@ function PhDSystem() {
       <SectionHeading
         eyebrow="PhD System"
         title="Fluid mechanics, petroleum engineering, and digital rock in one research line."
-        body="This section shows the research as a system: where the supervised digital rock work sits, what the MUL results prove, and how the work scales toward Digital Smart Key and digital twin use."
+        body="I organise my PhD as one connected workflow: laboratory evidence, pore-scale flow, digital rock interpretation, subsurface modelling, and digital-twin decision support."
       />
       <div className="pathway-list">
         {researchStages.map((stage, index) => (
@@ -361,9 +361,8 @@ function ResearchMap() {
         <p className="eyebrow">Research Map</p>
         <h2>A clean map of how the PhD fits together.</h2>
         <p>
-          This interactive section keeps the academic story easy to scan: digital rock first, then
-          corrected MUL results, Digital Smart Key, microbial biodegradation, and project-engineering
-          delivery.
+          I use this map to show how pore-scale evidence moves into models, workflows, and
+          engineering decisions.
         </p>
       </div>
       <div className="map-layout">
@@ -424,7 +423,7 @@ function Publications() {
       <SectionHeading
         eyebrow="Publications"
         title="Public outputs that support the digital rock and twin story."
-        body="The publication list uses DOI and public records where available, with InterPore 2026 and digital-twin records kept prominent."
+        body="These outputs support the same theme: porous-media flow, bioremediation, digital twins, and decision support."
       />
       <div className="publication-filters" aria-label="Publication filters" data-reveal>
         <Filter size={18} />
@@ -477,8 +476,8 @@ function Projects() {
     <section className="section projects-section" id="projects">
       <SectionHeading
         eyebrow="Projects"
-        title="Selected work, ordered by PhD relevance."
-        body="The project cards prioritise digital rock, supervised team proposal work, digital twins, field-scale translation, and energy project delivery."
+        title="Digital rock, digital twins, and project delivery."
+        body="I organise my work around the PhD path: pore-scale experiments first, then modelling, digital-twin translation, and engineering delivery."
       />
       <div className="project-grid">
         {projects.map((project, index) => (
@@ -586,7 +585,7 @@ function VisualEvidence() {
       <SectionHeading
         eyebrow="Visual Evidence"
         title="Selected figures, pore frames, and twin visuals."
-        body="The visual rail now favours corrected MUL evidence, digital rock outputs, and the offshore digital twin rather than generic portfolio imagery."
+        body="These figures show pore-scale evidence, digital rock outputs, field-scale translation, and offshore digital-twin visuals."
         align="center"
       />
       <div className="gallery-rail">
@@ -611,9 +610,7 @@ function Contact() {
         <p className="eyebrow">Contact</p>
         <h2>For research, project, speaking, and collaboration conversations.</h2>
         <p>
-          Professional contact is intentionally public-facing: email, LinkedIn, ORCID, GitHub, and
-          Google Scholar search. Private identity documents, source files, and raw CV documents are
-          kept off the public site.
+          Reach me through email, LinkedIn, ORCID, GitHub, or Google Scholar.
         </p>
       </div>
       <div className="contact-grid" data-reveal>

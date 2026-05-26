@@ -22,13 +22,13 @@ export const profile = {
   email: "turan.mutallimov@yahoo.com",
   portrait: asset("profile-clean.jpg"),
   background: asset("digital-twin-platform-full.png"),
-  heroVisual: asset("mul-pore-frame-242h.png"),
+  heroVisual: asset("digital-rock-pore-panel.png"),
   headline:
     "I work in fluid mechanics, petroleum engineering, and digital rock: turning pore-scale multiphase-flow evidence into digital-twin decisions.",
   summary:
-    "My PhD at the University of Aberdeen is centred on microbial crude-oil biodegradation, MUL microfluidic evidence, pore-network interpretation, and digital subsurface decision support. Under Dr Kejian Wu's supervision, I connect laboratory results, multiphase-flow modelling, subsurface interpretation, and AI-assisted workflow design.",
+    "My PhD at the University of Aberdeen is centred on fluid mechanics in porous media, microbial crude-oil biodegradation, microfluidic chip experiments, pore-network interpretation, and digital subsurface decision support. Under Dr Kejian Wu's supervision, I connect laboratory evidence, multiphase-flow modelling, subsurface interpretation, and AI-assisted workflow design.",
   thesis:
-    "PhD system: fluid mechanics and petroleum engineering questions -> batch biodegradation evidence -> MUL microfluidic results -> digital rock and pore-network descriptors -> sand-column and dynamic validation -> Digital Smart Key and offshore digital-twin decision support.",
+    "My PhD connects fluid mechanics and petroleum engineering with microfluidic chip experiments, digital rock modelling, pore-network interpretation, and offshore digital-twin decision support.",
 };
 
 export const accounts = [
@@ -71,24 +71,14 @@ export const affiliations = [
     note: "PhD research",
   },
   {
-    name: "Digital rock research team",
-    mark: "Dr Wu",
-    note: "Supervision and direction",
-  },
-  {
     name: "bp",
     image: asset("logo-bp.png"),
     note: "Research collaboration context",
   },
   {
-    name: "PMI",
-    mark: "PMP",
-    note: "PMP and PMI-ACP",
-  },
-  {
-    name: "HECOTEC IDC / JOCAP",
-    mark: "JOCAP",
-    note: "Energy project delivery",
+    name: "Azerbaijan State Scholarship",
+    image: asset("logo-azerbaijan-education.svg"),
+    note: "Funded by Azerbaijan State Scholarship",
   },
 ];
 
@@ -106,16 +96,16 @@ export const proofPoints = [
     label: "Pore architecture, micromodels, and pore-network interpretation",
   },
   {
-    value: "242 h",
-    label: "Corrected MUL microfluidic evidence endpoint",
+    value: "AI modelling",
+    label: "Physics-informed subsurface workflows",
   },
   {
-    value: "DSK",
-    label: "Digital subsurface workflow bridge from core to field",
+    value: "Digital twins",
+    label: "Offshore and subsurface decision support",
   },
   {
     value: "PMP",
-    label: "Certified project-delivery discipline, 2024-2027",
+    label: "Certified project-delivery discipline",
   },
 ];
 
@@ -123,16 +113,15 @@ export const about = {
   eyebrow: "About",
   title: "Digital rock first, with project-engineering discipline.",
   body: [
-    "Turan Mutallimov is a PhD researcher in petroleum engineering at the University of Aberdeen, working across fluid mechanics, multiphase flow, and digital rock. His strongest research centre of gravity is turning pore-scale experiments, microfluidic images, and pressure/permeability evidence into interpretable models for petroleum and environmental decisions.",
-    "Under the supervision of Dr Kejian Wu, and within a bp-collaboration context, Turan's work links Glen Lyon crude oil, Oleispira antarctica RB-8T, MUL microfluidic experiments, image segmentation, capillary behaviour, pressure/permeability interpretation, AI-assisted modelling, and digital twin workflow design. His project-engineering background adds delivery discipline: clear scope, evidence, stakeholder reporting, and decision-ready communication.",
+    "I am a PhD researcher in petroleum engineering at the University of Aberdeen, working across fluid mechanics, multiphase flow, and digital rock. My research centre of gravity is turning pore-scale experiments, microfluidic images, and pressure/permeability evidence into interpretable models for petroleum and environmental decisions.",
+    "Under the supervision of Dr Kejian Wu, and within a bp-collaboration context, I link crude-oil biodegradation, microfluidic chip experiments, image segmentation, capillary behaviour, pressure/permeability interpretation, AI-assisted modelling, and digital twin workflow design. My project-engineering background adds delivery discipline: clear scope, evidence, stakeholder reporting, and decision-ready communication.",
   ],
   focus: [
     "Fluid mechanics: multiphase flow, capillarity, pressure response, and permeability",
     "Petroleum engineering: crude oil, porous media, recovery, and decommissioning",
     "Digital rock physics, pore architecture, and pore-network interpretation",
-    "MUL microfluidic results: saturated and partially saturated 242 h pathways",
+    "Microfluidic chip experiments: saturated and partially saturated pore-scale pathways",
     "Digital subsurface and offshore digital-twin decision systems",
-    "Public method descriptions only: no confidential field values, proprietary datasets, or internal project numbers",
   ],
 };
 
@@ -158,10 +147,10 @@ export const researchStages = [
   {
     step: "03",
     icon: "Microscope",
-    tag: "MUL evidence",
+    tag: "Microfluidic evidence",
     title: "Microfluidic pore-scale results",
     body:
-      "The MUL work gives visible pore-scale evidence in a 20 x 10 mm, 20 um deep micromodel with about 0.57 porosity and 2.53 D initial permeability. Corrected 242 h evidence compares saturated and partially saturated pathways.",
+      "The microfluidic work gives visible pore-scale evidence of how brine, oil, air, and biomass occupy connected pore space. I use these images to compare saturated and partially saturated pathways in a form that can feed digital rock interpretation.",
     evidence: "Glen Lyon crude oil, Oleispira antarctica RB-8T, phase segmentation, pressure response",
   },
   {
@@ -171,7 +160,7 @@ export const researchStages = [
     title: "Pore-network and hydraulic interpretation",
     body:
       "The microfluidic evidence is translated into digital rock descriptors: connected fronts, trapped clusters, residual oil, emulsion behaviour, effective porosity, permeability response, and capillary-pressure discussion.",
-    evidence: "MUL simulator, pore-frame exports, permeability and uncertainty proxies",
+    evidence: "Research simulator, pore-frame exports, permeability and uncertainty proxies",
   },
   {
     step: "05",
@@ -189,7 +178,7 @@ export const researchStages = [
     title: "Digital twin and engineering delivery",
     body:
       "The final layer is operational translation: offshore digital twins, safety architecture, response planning, project communication, and the project-engineering discipline needed to make technical evidence usable.",
-    evidence: "Offshore platform twin visuals, safety publications, Absheron/JOCAP delivery experience",
+    evidence: "Offshore platform twin visuals, safety publications, and energy project delivery experience",
   },
 ];
 
@@ -202,9 +191,9 @@ export const researchPillars = [
   },
   {
     icon: "Microscope",
-    title: "MUL Microfluidic Results",
+    title: "Microfluidic Flow Evidence",
     body:
-      "Using corrected 242 h MUL evidence to compare saturated and partially saturated pathways for Glen Lyon crude oil and Oleispira antarctica RB-8T.",
+      "Using microfluidic chip experiments to compare saturated and partially saturated pore-scale pathways for crude-oil biodegradation.",
   },
   {
     icon: "Cpu",
@@ -222,20 +211,20 @@ export const researchPillars = [
 
 export const researchMetrics = [
   {
-    value: "242 h",
-    label: "Corrected MUL microfluidic endpoint",
+    value: "Pore scale",
+    label: "Microfluidic flow evidence and phase segmentation",
   },
   {
-    value: "90.2%",
-    label: "Brine occupancy at corrected Phase 2 endpoint",
+    value: "Multiphase",
+    label: "Capillarity, pressure response, and permeability interpretation",
   },
   {
-    value: "3.5%",
-    label: "Approximate residual oil at corrected Phase 2 endpoint",
+    value: "Digital rock",
+    label: "Pore networks, connected fronts, and trapped-oil descriptors",
   },
   {
-    value: "4 layers",
-    label: "Method categories: lab, pore scale, subsurface, twin",
+    value: "Twin link",
+    label: "Subsurface workflow and offshore decision support",
   },
 ];
 
@@ -246,44 +235,44 @@ export const researchMap = [
     label: "Digital Rock",
     kicker: "PhD strength",
     title: "Pore-scale evidence translated into digital rock descriptors.",
-    image: asset("mul-pore-frame-242h.png"),
+    image: asset("digital-rock-pore-panel.png"),
     body:
       "The first research story is the digital rock workflow: visible pore architecture, phase segmentation, brine/oil/air/biomass occupancy, pressure response, capillarity, and permeability interpretation.",
     points: [
       "My contribution: research simulator, pore-frame visualisation, and figure-ready evidence pipeline",
-      "Micromodel scale: 20 x 10 mm, 20 um depth, about 0.57 porosity",
-      "Descriptors for trapped clusters, connected fronts, residual oil, and K response",
+      "Microfluidic chip images converted into clear pore-scale descriptors",
+      "Descriptors for trapped clusters, connected fronts, residual oil, and permeability response",
     ],
   },
   {
-    id: "mul-results",
+    id: "microfluidic-results",
     icon: "Microscope",
-    label: "MUL Results",
-    kicker: "Corrected 242 h evidence",
-    title: "MUL results show how saturation state changes microbial oil response.",
+    label: "Microfluidics",
+    kicker: "Pore-scale flow evidence",
+    title: "Microfluidic experiments show how saturation state changes microbial oil response.",
     image: asset("mul-simulator-dashboard.png"),
     body:
-      "The public site now foregrounds the corrected MUL interpretation: Phase 1 as a saturated pathway and Phase 2 as a partially saturated pathway with recovery to 242 h.",
+      "I interpret saturated and partially saturated flow pathways using segmented microfluidic images, pressure response, and pore-scale phase behaviour.",
     points: [
       "Glen Lyon crude oil with Oleispira antarctica RB-8T",
       "Phase 1 retains biomass and oil-related occupancy under water-continuous conditions",
-      "Phase 2 recovers toward brine dominance, with about 90.2% brine and about 3.5% oil at 242 h",
+      "Phase 2 shows brine reconnection and residual-oil behaviour after partial saturation",
     ],
   },
   {
     id: "dsk",
     icon: "Cpu",
     label: "DSK / Twin",
-    kicker: "Methods, not field results",
+    kicker: "Digital subsurface workflow",
     title: "Digital Smart Key connects pore physics with subsurface workflow design.",
     image: asset("digital-twin-platform-full.png"),
     body:
-      "The collaboration-facing proposal frames a Digital Smart Key approach through methods rather than confidential results: physics, AI/deep learning, multiscale integration, subsurface uncertainty analysis, and upscaling beyond purely Darcy-style simplifications.",
+      "The Digital Smart Key direction connects physics, AI/deep learning, multiscale integration, subsurface uncertainty analysis, and upscaling beyond purely Darcy-style simplifications.",
     points: [
       "Team proposal context under Dr Kejian Wu's leadership",
       "Core-to-log-to-field workflow thinking for reservoir analysis and environmental decisions",
       "Physics-informed AI workflows for subsurface uncertainty analysis",
-      "Digital subsurface and offshore twin coupling described without field values or proprietary data",
+      "Digital subsurface and offshore twin coupling for decision support",
     ],
   },
   {
@@ -334,7 +323,7 @@ export const publications = [
     venue: "Reliability Engineering & System Safety",
     meta: "Journal article, DOI-listed/forthcoming record",
     detail:
-      "CV lists October 2026 issue timing; public site presents it as DOI-listed/forthcoming because the current date is before that issue date.",
+      "Digital twin architecture for offshore safety, risk analysis, and decision support.",
     href: "https://doi.org/10.1016/j.ress.2026.112428",
   },
   {
@@ -380,15 +369,15 @@ export const publications = [
 export const projects = [
   {
     icon: "Database",
-    name: "Digital Rock and MUL Microfluidic System",
+    name: "Digital Rock and Microfluidic System",
     label: "Fluid mechanics and petroleum engineering",
     image: asset("mul-simulator-dashboard.png"),
     body:
-      "A pore-scale research workflow that turns MUL microfluidic images and corrected 242 h evidence into digital rock figures, simulator views, and hydraulic interpretation.",
+      "A pore-scale research workflow that turns microfluidic chip images into digital rock figures, simulator views, and hydraulic interpretation.",
     details: [
-      "Glen Lyon crude oil and Oleispira antarctica RB-8T in a 20 x 10 mm micromodel",
+      "Glen Lyon crude oil and Oleispira antarctica RB-8T in microfluidic chip experiments",
       "Phase occupancy, pressure response, permeability proxy, and endpoint fingerprints",
-      "Public-facing simulator visuals that show the research logic clearly",
+      "Simulator visuals that show the research logic clearly",
     ],
   },
   {
@@ -401,8 +390,8 @@ export const projects = [
     details: [
       "Worked in a team context under Dr Kejian Wu's supervision/leadership",
       "Contributed to pore-scale modelling, microchannel-flow, upscaling, and simulation workflow framing",
-      "Supported reservoir-analysis workflow framing using well-log and production-data concepts without publishing values",
-      "Describes methods and responsibilities only; no pressure values, production rates, field results, proprietary datasets, or internal project numbers",
+      "Supported reservoir-analysis workflow framing using well-log and production-data concepts",
+      "Focused on physics-informed AI, upscaling, and workflow integration",
     ],
   },
   {
@@ -492,7 +481,7 @@ export const experience = [
     role: "PhD Candidate, Petroleum Engineering",
     place: "University of Aberdeen",
     details:
-      "Researching microbial crude-oil biodegradation, MUL microfluidic results, fluid mechanics in porous media, digital rock interpretation, pore-network modelling, multiphase-flow simulation workflows, and digital subsurface decision support under Dr Kejian Wu's supervision.",
+      "Researching microbial crude-oil biodegradation, microfluidic chip experiments, fluid mechanics in porous media, digital rock interpretation, pore-network modelling, multiphase-flow simulation workflows, and digital subsurface decision support under Dr Kejian Wu's supervision.",
   },
   {
     period: "2023 - 2024",
@@ -551,7 +540,7 @@ export const skillGroups = [
   {
     title: "Digital Rock",
     items: [
-      "MUL microfluidics",
+      "Microfluidic chip experiments",
       "ImageJ/Fiji segmentation",
       "Pore-network modelling",
       "Multiphase flow modelling",
@@ -594,16 +583,16 @@ export const skillGroups = [
 export const gallery = [
   {
     title: "Digital Rock Pore Frame",
-    tag: "MUL 242 h",
-    image: asset("mul-pore-frame-242h.png"),
+    tag: "Pore-scale evidence",
+    image: asset("digital-rock-pore-panel.png"),
   },
   {
-    title: "MUL Ten-Day Phase Evolution",
-    tag: "Corrected evidence",
+    title: "Microfluidic Phase Evolution",
+    tag: "Flow evidence",
     image: asset("mul-phase-evolution.svg"),
   },
   {
-    title: "MUL Endpoint Fingerprints",
+    title: "Endpoint Phase Fingerprints",
     tag: "Pore occupancy",
     image: asset("mul-endpoint-fingerprints.svg"),
   },
